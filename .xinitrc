@@ -50,6 +50,7 @@ monitorToggleHDMI-1.sh
 
 xrdb -merge ~/usr/colors/dark_castle.colors
 hsetroot -fill ~/usr/pictures/wallpapers/darkCasttle.png
+#xpad &
 
 synclient TouchpadOff=1
 #compton --config ~/compton.conf -b &
@@ -57,5 +58,10 @@ unclutter &
 #bar.sh &
 #background_randomizer.sh
 #nmcli dev wifi connect <name> password <password>
+
+xmodmap -e "clear lock"
+xmodmap -e "keycode 9 = Caps_Lock"
+xmodmap -e "keycode 66 = Escape"
+xmodmap -e "add Lock = Caps_Lock"
 
 exec urxvt -b 15

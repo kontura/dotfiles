@@ -1,0 +1,15 @@
+urxvt*transparent: false
+!urxvt*shading: 100
+
+
+URxvt.scrollBar: false
+URxvt.depth: 32
+
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+urxvt.letterSpace: 1
+
