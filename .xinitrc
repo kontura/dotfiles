@@ -59,6 +59,7 @@ unclutter &
 #background_randomizer.sh
 #nmcli dev wifi connect <name> password <password>
 
+redshift &
 xmodmap -e "clear lock"
 xmodmap -e "keycode 9 = Caps_Lock"
 xmodmap -e "keycode 66 = Escape"

@@ -23,6 +23,11 @@ vmap <C-v> <Plug>(expand_region_shrink)
 syntax on
 :command! -bar -bang Q quit<bang>
 
+set path+=**
+set wildmenu
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+
 :command W w
 :command WQ wq
 :command Wq wq
