@@ -49,7 +49,7 @@ monitorToggleHDMI1.sh
 monitorToggleHDMI-1.sh
 
 xrdb -merge ~/usr/colors/dark_castle.colors
-hsetroot -fill ~/usr/pictures/wallpapers/darkCasttle.png
+hsetroot -fill ~/usr/pictures/wallpapers/brown_mountains.png
 #xpad &
 
 synclient TouchpadOff=1

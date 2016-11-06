@@ -26,7 +26,6 @@ syntax on
 set path+=**
 set wildmenu
 let g:netrw_banner=0
-let g:netrw_liststyle=3
 
 :command W w
 :command WQ wq
@@ -116,6 +115,8 @@ map <Leader>b :bp<CR>
 map <Leader>k :bd<CR>
 map <Leader>= mpggVG=`pzz
 map <Leader>u r<C-k><space><space>
+
+map <Leader><Leader> <C-^>
 
 map <Leader>rt :!rspec %<CR>
 map <Leader>rd :!bin/dev rspec %<CR>

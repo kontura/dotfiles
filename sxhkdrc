@@ -76,6 +76,9 @@ super + alt + l
 super + alt + h
   mpc prev
 
+super + alt + space
+  clerk --add track
+
 super + alt + j
   amixer -D pulse sset Master 5%-
 
