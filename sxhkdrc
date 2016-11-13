@@ -44,7 +44,7 @@ super + t
   tile.sh
 
 super + w
-  tabbed -c -d -o black surf -b -e
+  surf
 
 super + l
 	wmv +40 0 $(pfw) 

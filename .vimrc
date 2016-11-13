@@ -111,10 +111,16 @@ map <Leader>m :!make<CR>
 map <Leader>g :registers<CR>
 map <Leader>r :! %<CR>
 map <Leader>n :bn<CR>
-map <Leader>b :bp<CR>
+"map <Leader>b :bp<CR>
 map <Leader>k :bd<CR>
 map <Leader>= mpggVG=`pzz
 map <Leader>u r<C-k><space><space>
+
+"make . work with visually selected lines
+vnoremap . :norm.<CR>
+
+nnoremap <Leader>e :e **/*
+nnoremap <Leader>b :b */*<C-d>
 
 map <Leader><Leader> <C-^>
 

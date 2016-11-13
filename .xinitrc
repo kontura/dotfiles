@@ -48,8 +48,8 @@ sxhkd &
 monitorToggleHDMI1.sh
 monitorToggleHDMI-1.sh
 
-xrdb -merge ~/usr/colors/dark_castle.colors
-hsetroot -fill ~/usr/pictures/wallpapers/brown_mountains.png
+. ~/.bash_aliases
+set_theme archer_painting
 #xpad &
 
 synclient TouchpadOff=1
@@ -58,6 +58,10 @@ unclutter &
 #bar.sh &
 #background_randomizer.sh
 #nmcli dev wifi connect <name> password <password>
+
+cat startup_notifications | xargs -L1 popup
+
+conky &
 
 redshift &
 xmodmap -e "clear lock"
