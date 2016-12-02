@@ -49,7 +49,7 @@ monitorToggleHDMI1.sh
 monitorToggleHDMI-1.sh
 
 . ~/.bash_aliases
-set_theme archer_painting
+set_theme white_elf
 #xpad &
 
 synclient TouchpadOff=1
@@ -59,9 +59,10 @@ unclutter &
 #background_randomizer.sh
 #nmcli dev wifi connect <name> password <password>
 
-cat startup_notifications | xargs -L1 popup
+cat ~/usr/startup_notifications | xargs -L1 popup &
 
 conky &
+#xsnow -notrees -nosanta -norudolf &
 
 redshift &
 xmodmap -e "clear lock"

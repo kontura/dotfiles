@@ -89,7 +89,7 @@ super + {1-9}
 	groups.sh -t {1-9}
 
 super + Return
-	urxvt -b 15
+	urxvt -b 25
  # st
 
 super + ctrl + l

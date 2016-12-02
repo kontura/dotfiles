@@ -1,4 +1,5 @@
 
+execute pathogen#infect()
 " ================general config ====================
 "set number "Line numbers are good
 set backspace=indent,eol,start "Allow backspace in insert mode
@@ -107,7 +108,6 @@ colorscheme default
 let mapleader = "\<Space>"
 
 map <Leader>w :w<CR>
-map <Leader>m :!make<CR>
 map <Leader>g :registers<CR>
 map <Leader>r :! %<CR>
 map <Leader>n :bn<CR>
@@ -115,6 +115,9 @@ map <Leader>n :bn<CR>
 map <Leader>k :bd<CR>
 map <Leader>= mpggVG=`pzz
 map <Leader>u r<C-k><space><space>
+
+"Buffer mappings
+nnoremap <Leader>l :ls<CR>
 
 "make . work with visually selected lines
 vnoremap . :norm.<CR>
@@ -124,12 +127,11 @@ nnoremap <Leader>b :b */*<C-d>
 
 map <Leader><Leader> <C-^>
 
-map <Leader>rt :!rspec %<CR>
-map <Leader>rd :!bin/dev rspec %<CR>
-map <Leader>ra :!rspec <CR>
-"individual test
-nnoremap <leader>rs :execute "!rspec %:" . line(".")<cr> 
-
+" fugitive git bindings
+nnoremap <space>ga :Git add %:p<CR><CR>
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gc :Gcommit -v -q<CR>
+nnoremap <space>gt :Gcommit -v -q %:p<CR>
 
 iabbrev docu # This is an example method commented the way I like.
 \<CR> It sums the three arguments and returns that value.
