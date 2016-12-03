@@ -34,3 +34,8 @@
 ! white
 *.color7:       #c7ccd1
 *.color15:      #f3f4f5
+
+custom.Window.border: 1
+custom.Window.active: ffffff
+custom.Window.inactive: 000000
+custom.Conky.clock: Tengwar\\-Gandalf:size=150
