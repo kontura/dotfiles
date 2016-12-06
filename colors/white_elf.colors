@@ -38,4 +38,5 @@
 custom.Window.border: 1
 custom.Window.active: ffffff
 custom.Window.inactive: 000000
-custom.Conky.clock: Tengwar\\-Gandalf:size=150
+custom.Conky.clock: C059:size=50
+custom.Conky.color: a2a2a2

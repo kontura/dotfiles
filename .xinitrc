@@ -49,7 +49,7 @@ monitorToggleHDMI1.sh
 monitorToggleHDMI-1.sh
 
 . ~/.bash_aliases
-set_theme white_elf
+set_theme gray_black
 #xpad &
 
 synclient TouchpadOff=1

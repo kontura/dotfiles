@@ -34,3 +34,11 @@
 ! white
 *.color7:       #98d1ce
 *.color15:      #d3ebe9
+
+
+
+custom.Window.border: 1
+custom.Window.active: ffffff
+custom.Window.inactive: 000000
+custom.Conky.clock: Trebuchet MS:size=50
+custom.Conky.color: ffffff

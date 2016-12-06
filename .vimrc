@@ -76,7 +76,6 @@ function! Tab_Or_Complete()
 endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 
-
 "
 "" ================ Turn Off Swap Files ==============
 set noswapfile
@@ -108,13 +107,12 @@ colorscheme default
 let mapleader = "\<Space>"
 
 map <Leader>w :w<CR>
-map <Leader>g :registers<CR>
-map <Leader>r :! %<CR>
+map <Leader>r :registers<CR>
 map <Leader>n :bn<CR>
-"map <Leader>b :bp<CR>
 map <Leader>k :bd<CR>
 map <Leader>= mpggVG=`pzz
 map <Leader>u r<C-k><space><space>
+map <Leader>c :!ctags -R *<CR>
 
 "Buffer mappings
 nnoremap <Leader>l :ls<CR>

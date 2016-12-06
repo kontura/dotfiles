@@ -1,4 +1,3 @@
-read -r -d '' XRDB <<- EOM
 ! special
 *.foreground:   #b9b9b9
 *.background:   #000000
