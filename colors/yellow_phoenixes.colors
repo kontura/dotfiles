@@ -1,7 +1,7 @@
 ! special
-*.foreground:   #fffebe
+*.foreground:   #f0be77
 *.background:   #1d1004
-*.cursorColor:  #fffebe
+*.cursorColor:  #f0be77
 
 ! black
 *.color0:       #ffb520
@@ -36,7 +36,7 @@
 *.color15:      #8d764c
 
 custom.Window.border: 5
-custom.Window.active: fffc77
+custom.Window.active: f0be77
 custom.Window.inactive: 000000
 custom.Conky.clock: Trebuchet MS:size=50
 custom.Conky.color: 1f0b04

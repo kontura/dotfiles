@@ -1,0 +1,43 @@
+! special
+*.foreground:   #888888
+*.background:   #151515
+*.cursorColor:  #888888
+
+! black
+*.color0:       #7f3a2b
+*.color8:       #7f3a2b
+
+! red
+*.color1:       #537c76
+*.color9:       #724f49
+
+! green
+*.color2:       #537c76
+*.color10:      #081f2d
+
+! yellow
+*.color3:       #873122
+*.color11:      #245361
+
+! blue
+*.color4:       #444a4c
+*.color12:      #093748
+
+! magenta
+*.color5:       #873122
+*.color13:      #888ba5
+
+! cyan
+*.color6:       #537c76
+*.color14:      #599caa
+
+! white
+*.color7:       #98d1ce
+*.color15:      #d3ebe9
+
+custom.Window.border: 2
+custom.Window.active: 537c76
+custom.Window.inactive: 000000
+custom.Conky.clock: 7x14:size=30
+custom.Conky.color: 873122
+custom.exec: compton --config ~/.config/compton/compton.conf -b
