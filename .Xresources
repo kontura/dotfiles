@@ -4,6 +4,7 @@ urxvt*transparent: false
 
 URxvt.scrollBar: false
 URxvt.depth: 32
+URxvt.internalBorder:  4
 
 Xft.dpi:                    96
 Xft.antialias:              true
@@ -12,4 +13,5 @@ Xft.hinting:                true
 Xft.hintstyle:              hintslight
 
 urxvt.letterSpace: 1
+!URxvt.font: xft:Overpass-mono:size=9
 

@@ -1,5 +1,7 @@
 
 execute pathogen#infect()
+syntax enable
+filetype plugin indent on
 " ================general config ====================
 "set number "Line numbers are good
 set backspace=indent,eol,start "Allow backspace in insert mode
@@ -21,7 +23,6 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
 "turn on syntax highlighting
-syntax on
 :command! -bar -bang Q quit<bang>
 
 set path+=**

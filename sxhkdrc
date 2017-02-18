@@ -4,68 +4,6 @@ super + Escape
 	pkill -USR1 -x sxhkd 
 # wm independent hotkeys
 #
-super + ctrl + k
-  killw $(pfw)
-
-super + button1
-  mouseMoveWindow
-
-super + @button1
-  killall mouseMoveWindow
-
-super + button3
-  mouseResizeWindow
-
-super + @button3
-  killall mouseResizeWindow
-
-alt {_,shift +}Tab
-  focus.sh {next, prev}
-
-alt + {h, j, k, l}
-  closest.sh {h, j, k, l}
-
-super + f
-  fullscreen.sh $(pfw)
-
-super + s
-  center.sh $(pfw)
-
-super + {y, u, b, n}
-  corner.sh {tl, tr, bl, br} $(pfw)
-
-super + equal
-  shrink.sh $(pfw)
-
-super + minus
-  grow.sh $(pfw)
-
-super + t
-  tile.sh
-
-super + w
-  surf
-
-super + l
-	wmv +40 0 $(pfw) 
-
-super + h
-	wmv -40 0 $(pfw)
-
-super + k
-	wmv 0 -40 $(pfw)
-
-super + j
-	wmv 0 +40 $(pfw)
-
-super + shift + {l,h}
-	wrs {+40,-40} 0 $(pfw)
-
-super + shift + {k,j}
-	wrs 0 {-40,+40} $(pfw)
-
-super + ctrl + {1-9}
-  groups.sh -s $(pfw) {1-9}
 
 super + alt + p
   mpc toggle
@@ -85,11 +23,8 @@ super + alt + j
 super + alt + k
   amixer -D pulse sset Master 5%+
 
-super + {1-9}
-	groups.sh -t {1-9}
-
 super + Return
-	urxvt -b 25
+	term
  # st
 
 super + ctrl + l

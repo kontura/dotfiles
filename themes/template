@@ -1,0 +1,12 @@
+#colors
+
+
+
+
+
+custom.Window.border: 1
+custom.Window.active: cccccc
+custom.Window.inactive: 444444
+custom.Conky.clock: 7x14:size=30
+custom.Conky.color: kfffff
+custom.to_exec:compton --config ~/.config/compton/compton.conf -b

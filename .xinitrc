@@ -36,38 +36,44 @@ fi
 PATH=$PATH:/home/alex/bin
 PATH=$PATH:/root/.gem/ruby/2.3.0/bin
 export PATH
-wew | xEventReactor.sh &
 
 #barmk.sh | drawBar.sh &
 #z3braBar.sh | drawTopBar.sh &
 
 setxkbmap -option grp:alt_shift_toggle us,cz
 mpd
-sxhkd &
 
 monitorToggleHDMI1.sh
 monitorToggleHDMI-1.sh
 
 . ~/.bash_aliases
-set_theme gray_black
 #xpad &
 
 synclient TouchpadOff=1
-#compton --config ~/compton.conf -b &
+#set_theme blue_wave_big
+hsetroot -tile ~/usr/pictures/wallpapers/repeat/px_by_Gre3g.png
+#compton --config ~/.config/compton/compton.conf -b
+compton --config ~/.config/compton/compton_shadow.conf -b
+set_theme gray_black2
 unclutter &
 #bar.sh &
 #background_randomizer.sh
 #nmcli dev wifi connect <name> password <password>
 
-cat ~/usr/startup_notifications | xargs -L1 popup &
+#cat ~/usr/startup_notifications | xargs -L1 popup &
 
-conky &
+#conky &
 #xsnow -notrees -nosanta -norudolf &
 
-redshift &
-xmodmap -e "clear lock"
-xmodmap -e "keycode 9 = Caps_Lock"
-xmodmap -e "keycode 66 = Escape"
-xmodmap -e "add Lock = Caps_Lock"
+#prevent screen sleep mode
+xset s off -dpms
 
-exec urxvt -b 15
+redshift &
+~/bin/switchCapsLockWithEsc
+
+wew | xEventReactor.sh &
+sxhkd ~/.config/sxhkd/wmutils &
+exec urxvt -b 25
+
+#sxhkd ~/.config/sxhkd/bspwm &
+#exec bspwm

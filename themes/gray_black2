@@ -40,4 +40,6 @@ custom.Window.active: cccccc
 custom.Window.inactive: 444444
 custom.Conky.clock: 7x14:size=30
 custom.Conky.color: kfffff
-custom.to_exec:compton --config ~/.config/compton/compton.conf -b
+custom.to_exec:compton --config /home/alex/.config/compton/compton_shadow.conf -b
+custom.bg.picture: /home/alex/usr/pictures/wallpapers/repeat/px_by_Gre3g.png
+custom.bg.setting: -tile

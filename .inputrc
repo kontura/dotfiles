@@ -1,0 +1,9 @@
+set completion-ignore-case on
+set completion-query-items -1
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+set skip-completed-text on
+set editing-mode vi
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
