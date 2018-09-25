@@ -1,6 +1,7 @@
 urxvt*transparent: false
 !urxvt*shading: 100
 
+URxvt.keysym.M-r: perl:keyboard-select:search
 
 URxvt.scrollBar: false
 URxvt.depth: 32
@@ -12,6 +13,8 @@ Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
 
-urxvt.letterSpace: 1
-!URxvt.font: xft:Overpass-mono:size=9
+urxvt.letterSpace: 0
+URxvt.font: xft:Gohu Gohufont:size=9
 
+URxvt.keysym.M-C-1: command:\033]50;xft:Gohu GohuFont:pixelsize=11\007
+URxvt.keysym.M-C-2: command:\033]50;xft:Gohu GohuFont:pixelsize=14\007

@@ -93,17 +93,18 @@ endif
 "
 "
 "colorscheme Alduin
-"colorscheme monokai-chris
+"colorscheme monokain
+colorscheme falcon
 "colorscheme blaquemagick
-colorscheme default
+"colorscheme default
 
-"hi normal ctermbg=none
-"hi NonText ctermbg=none
-"hi String ctermbg=none
-"hi StatusLine ctermbg=none
+hi normal ctermbg=none
+hi NonText ctermbg=none
+hi String ctermbg=none
+hi StatusLine ctermbg=none
 "hi StatusLine ctermfg=White
 ""set foldcolumn=3
-"hi FoldColumn ctermbg=none
+hi FoldColumn ctermbg=none
 
 let mapleader = "\<Space>"
 
@@ -161,3 +162,9 @@ map <C-H> <C-W>h
 map <C-L> <C-W>l
 set wmh=0
 
+let g:ctrlp_cache_dir = '~/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif

@@ -1,0 +1,45 @@
+! special
+*.foreground:   #ffffff
+*.background:   #040e17
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #303030
+*.color8:       #5e5e5e
+
+! red
+*.color1:       #c10023
+*.color9:       #ff8781
+
+! green
+*.color2:       #a83334
+*.color10:      #ffa095
+
+! yellow
+*.color3:       #b51d2c
+*.color11:      #ff948b
+
+! blue
+*.color4:       #818181
+*.color12:      #feb2aa
+
+! magenta
+*.color5:       #b82113
+*.color13:      #ebbbb5
+
+! cyan
+*.color6:       #9a413d
+*.color14:      #ffaaa0
+
+! white
+*.color7:       #c6c6c6
+*.color15:      #ffffff
+
+custom.Window.border: 1
+custom.Window.active: cccccc
+custom.Window.inactive: 444444
+custom.Conky.clock: 7x14:size=30
+custom.Conky.color: kfffff
+custom.to_exec:"conky"
+custom.bg.picture: /home/alex/usr/pictures/wallpapers/red_forest.jpg
+custom.bg.setting: -full

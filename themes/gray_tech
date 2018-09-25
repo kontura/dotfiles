@@ -1,0 +1,45 @@
+! special
+*.foreground:   #fbfbfb
+*.background:   #12131c
+*.cursorColor:  #fbfbfb
+
+! black
+*.color0:       #2c2d43
+*.color8:       #000000
+
+! red
+*.color1:       #ffffff
+*.color9:       #f2f2f2
+
+! green
+*.color2:       #8a8bb2
+*.color10:      #ffffff
+
+! yellow
+*.color3:       #d20202
+*.color11:      #5b818c
+
+! blue
+*.color4:       #595f61
+*.color12:      #093748
+
+! magenta
+*.color5:       #4e5165
+*.color13:      #888ba5
+
+! cyan
+*.color6:       #33859d
+*.color14:      #599caa
+
+! white
+*.color7:       #98d1ce
+*.color15:      #d3ebe9
+
+
+
+custom.Window.border: 1
+custom.Window.active: ffffff
+custom.Window.inactive: 444444
+custom.to_exec: compton --config ~/.config/compton/transparency.conf -b && visualizer ~/usr/pictures/wallpapers/gray_tech.png &
+custom.bg.picture: /home/alex/usr/pictures/wallpapers/gray_tech.png
+custom.bg.setting: -fill

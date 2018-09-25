@@ -50,17 +50,18 @@ monitorToggleHDMI-1.sh
 #xpad &
 
 synclient TouchpadOff=1
-#set_theme blue_wave_big
-hsetroot -tile ~/usr/pictures/wallpapers/repeat/px_by_Gre3g.png
 #compton --config ~/.config/compton/compton.conf -b
-compton --config ~/.config/compton/compton_shadow.conf -b
-set_theme gray_black2
-unclutter &
+#compton --config ~/.config/compton/compton_shadow.conf -b
+#unclutter &
 #bar.sh &
-#background_randomizer.sh
 #nmcli dev wifi connect <name> password <password>
 
-#cat ~/usr/startup_notifications | xargs -L1 popup &
+#hsetroot -tile ~/usr/pictures/wallpapers/repeat/grid_tile.png
+#set_theme brown_space
+xrdb -override ~/usr/dotfiles/colors/cloud.colors
+#~/bin/conky
+
+cat ~/usr/startup_notifications | xargs -L1 popup &
 
 #conky &
 #xsnow -notrees -nosanta -norudolf &
@@ -71,8 +72,12 @@ xset s off -dpms
 redshift &
 ~/bin/switchCapsLockWithEsc
 
-wew | xEventReactor.sh &
+#wew | xEventReactor.sh &
 sxhkd ~/.config/sxhkd/wmutils &
+#exec openbox-session
+#exec pekwm
+#exec /home/alex/src/aewmpp/aewm++
+exec dwm
 exec urxvt -b 25
 
 #sxhkd ~/.config/sxhkd/bspwm &

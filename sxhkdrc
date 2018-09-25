@@ -5,6 +5,21 @@ super + Escape
 # wm independent hotkeys
 #
 
+super + c
+  clipmenu
+
+super + z
+  popup $(date)
+
+super + d
+  term "vim /home/alex/usr/TODO"
+
+super + alt + c
+  unicode_dmenu
+
+super + w + i
+  ( w=$(pfw); ignw -s $w; focus.sh next; chwb -s 0 $w; )
+
 super + alt + p
   mpc toggle
 
@@ -27,12 +42,18 @@ super + Return
 	term
  # st
 
+super + w
+  surf
+
 super + ctrl + l
   lock.sh
 
 super + space
   rofi.sh
 #dmenu_run -nb '#1c1c1c' -sf '#1c1c1c' -sb white 
+
+super + w + alt
+  ~/bin/rofi-wifi-menu/rofi-wifi-menu.sh
 
 super + Up
   xbacklight -inc 10

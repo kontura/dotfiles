@@ -1,0 +1,44 @@
+! special
+*.foreground:   #dfeeec
+*.background:   #080e15
+*.cursorColor:  #dfeeec
+
+! black
+*.color0:       #0a0f14
+*.color8:       #10151b
+
+! red
+*.color1:       #ea7b2c
+*.color9:       #d26939
+
+! green
+*.color2:       #fafafa
+*.color10:      #fafafa
+
+! yellow
+*.color3:       #edb54b
+*.color11:      #ad5824
+
+! blue
+*.color4:       #b4531f
+*.color12:      #b4531f
+
+! magenta
+*.color5:       #2f3e48
+*.color13:      #2f3e48
+
+! cyan
+*.color6:       #728d90
+*.color14:      #728d90
+
+! white
+*.color7:       #fafafa
+*.color15:      #fafafa
+
+custom.Window.border: 3
+custom.Window.active: b4531f
+custom.Window.inactive: 444444
+custom.Conky.clock: 7x14:size=30
+custom.Conky.color: kfffff
+custom.bg.picture: /home/alex/usr/pictures/wallpapers/orange_autumn.png
+custom.bg.setting: -fill

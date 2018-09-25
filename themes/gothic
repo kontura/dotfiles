@@ -40,7 +40,7 @@ custom.Window.border: 1
 custom.Window.active: f74424
 custom.Window.inactive: 444444
 custom.Conky.clock: 7x14:size=30
-custom.Conky.color: kfffff
-custom.to_exec:compton --config ~/.config/compton/compton.conf -b
-custom.bg.picture: 020202
-custom.bg.setting: -solid
+custom.Conky.color: 0fffff
+custom.to_exec: ~/bin/conky -d && compton --config ~/.config/compton/transparency.conf -b
+custom.bg.picture: /home/alex/usr/pictures/wallpapers/gothic.png
+custom.bg.setting: -fill

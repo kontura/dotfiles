@@ -1,0 +1,47 @@
+! special
+*.foreground:   #fdfeff
+*.background:   #04101c
+*.cursorColor:  #fdfeff
+
+! black
+*.color0:       #1c5465
+*.color8:       #1c5465
+
+! red
+*.color1:       #30656b
+*.color9:       #30656b
+
+! green
+*.color2:       #317273
+*.color10:      #317273
+
+! yellow
+*.color3:       #245361
+*.color11:      #245361
+
+! blue
+*.color4:       #1d4a50
+*.color12:      #1d4a50
+
+! magenta
+*.color5:       #eaebe6
+*.color13:      #eaebe6
+
+! cyan
+*.color6:       #33859d
+*.color14:      #599caa
+
+! white
+*.color7:       #98d1ce
+*.color15:      #d3ebe9
+
+
+
+custom.Window.border: 0
+custom.Window.active: #ffffff
+custom.Window.bg_a: #07192c
+custom.Window.inactive: 000000
+custom.Conky.color: ffffff
+custom.to_exec:compton --config ~/.config/compton/compton_shadow.conf -b && ~/bin/conky
+custom.bg.picture: /home/alex/usr/pictures/wallpapers/blue_snow.png
+custom.bg.setting: -center

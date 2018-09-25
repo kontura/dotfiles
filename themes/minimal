@@ -36,11 +36,12 @@
 *.color15:      #99ac9e
 
 
-custom.Window.border: 1
+custom.Window.border: 0
 custom.Window.active: f74424
 custom.Window.inactive: 444444
 custom.Conky.clock: 7x14:size=30
 custom.Conky.color: kfffff
-custom.to_exec:compton --config ~/.config/compton/compton.conf -b
-custom.bg.picture: 020202
+custom.to_exec: compton --config /home/alex/.config/compton/compton.conf -b
+custom.exec:
+custom.bg.picture: #020202
 custom.bg.setting: -solid

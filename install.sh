@@ -9,3 +9,4 @@ ln -sfv "$DOTFILES_DIR/.Xresources" ~
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/sxhkdrc" ~/.config/sxhkd/sxhkdrc
 ln -sfv "$DOTFILES_DIR/.inputrs" ~
+ln -sfv "$DOTFILES_DIR/.bash_aliases" ~
