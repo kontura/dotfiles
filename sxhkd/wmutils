@@ -1,0 +1,56 @@
+super + ctrl + k
+  killw $(pfw)
+
+super + button1
+  mouseMoveWindowGrid
+
+super + @button1
+  killall mouseMoveWindowGrid
+
+super + button3
+  mouseResizeWindowGrid
+
+super + @button3
+  killall mouseResizeWindowGrid
+
+alt {_,shift +}Tab
+  focus.sh {next, prev}
+
+alt + {h, j, k, l}
+  closest.sh {h, j, k, l}
+
+super + f
+  fullscreen.sh $(pfw)
+
+super + s
+  center.sh $(pfw)
+
+super + {y, u, b, n}
+  corner.sh {tl, tr, bl, br} $(pfw)
+
+super + equal
+  shrink.sh $(pfw)
+
+super + minus
+  grow.sh $(pfw)
+
+super + t
+  tile.sh
+
+super + {l, h}
+  wtp $(wattr xywhi `pfw` | awk '$1{+=80, -=80}')
+
+super + {j, k}
+  wtp $(wattr xywhi `pfw` | awk '$2{+=80, -=80}')
+
+super + shift + {l,h}
+  wtp $(wattr xywhi `pfw` | awk '$3{+=80, -=80}')
+
+super + shift + {j,k}
+  wtp $(wattr xywhi `pfw` | awk '$4{+=80, -=80}')
+
+super + shift + {1-9}
+  groups.sh -s $(pfw) {1-9}
+
+super + {1-9}
+	groups.sh -t {1-9}
