@@ -16,4 +16,5 @@ ln -sfv "$DOTFILES_DIR/.bashrc" ~
 
 mkdir -p ~/src
 cd ~/src && git clone https://git.suckless.org/dwm
+cd ~/src && git clone https://aur.archlinux.org/st-scrollback-git.git
 ln -sfv "$DOTFILES_DIR/dwm/config.h" ~/src/dwm/config.h
