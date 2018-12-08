@@ -14,6 +14,6 @@ ln -sfv "$DOTFILES_DIR/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/.bash_aliases" ~
 ln -sfv "$DOTFILES_DIR/.bashrc" ~
 
-mkdir -p ~/src/dwm
-cd ~/src/dwm && git clone https://git.suckless.org/dwm
+mkdir -p ~/src
+cd ~/src && git clone https://git.suckless.org/dwm
 ln -sfv "$DOTFILES_DIR/dwm/config.h" ~/src/dwm/config.h
