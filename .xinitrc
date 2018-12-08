@@ -67,18 +67,18 @@ cat ~/usr/startup_notifications | xargs -L1 popup &
 #xsnow -notrees -nosanta -norudolf &
 
 #prevent screen sleep mode
-xset s off -dpms
+#xset s off -dpms
 
 redshift &
 ~/bin/switchCapsLockWithEsc
 
 #wew | xEventReactor.sh &
-sxhkd ~/.config/sxhkd/wmutils &
+sxhkd ~/.config/sxhkd/dwm &
 #exec openbox-session
 #exec pekwm
 #exec /home/alex/src/aewmpp/aewm++
 exec dwm
-exec urxvt -b 25
+exec st
 
 #sxhkd ~/.config/sxhkd/bspwm &
 #exec bspwm

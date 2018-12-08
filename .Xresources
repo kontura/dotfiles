@@ -18,3 +18,39 @@ URxvt.font: xft:Gohu Gohufont:size=9
 
 URxvt.keysym.M-C-1: command:\033]50;xft:Gohu GohuFont:pixelsize=11\007
 URxvt.keysym.M-C-2: command:\033]50;xft:Gohu GohuFont:pixelsize=14\007
+
+!special
+
+*.foreground:   #000000
+
+!cursosr color
+*.background:   #e9e9e9
+
+!background
+*.cursorColor:  #000000 
+
+! black
+*.color0:       #6e7884
+*.color8:       #6e7884
+*.color10:      #67a2a9
+
+! yellow
+*.color3:       #457d88
+*.color11:      #457d88
+
+! blue
+*.color4:       #acbebe
+*.color12:      #acbebe
+
+! magenta
+*.color5:       #457d88
+*.color13:      #457d88
+
+! cyan
+*.color6:       #669999
+*.color14:      #66cccc
+
+! white
+*.color7:       #99cccc
+*.color15:      #ccffff
+

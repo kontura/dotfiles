@@ -19,6 +19,10 @@ alias suspend='systemctl suspend'
 alias wall='hsetroot -center'
 alias n='/usr/local/bin/nnn -p /home/alex/bin/nlay'
 
+alias v='vim'
+alias vi='vim'
+alias pa='sudo pacman'
+
 alias dockerstopall='docker stop $(docker ps -aq)'
 alias dockerrmall='docker rm $(docker ps -aq)'
 alias redmine='rvm use 1.9.3; cd /usr/share/webapps/redmine; ruby bin/rails s -b 0.0.0.0 webrick -e production -p 3001'
