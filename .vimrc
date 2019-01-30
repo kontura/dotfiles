@@ -55,7 +55,7 @@ set expandtab
 filetype plugin on
 filetype indent on
 " Display tabs and trailing spaces visually
-set wrap 
+set nowrap 
 set textwidth=0 wrapmargin=0
 " ================ Folds ============================
 set foldmethod=indent "fold based on indent
@@ -65,19 +65,9 @@ set nofoldenable "dont fold by default
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-function! Tab_Or_Complete()
-    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-        return "\<C-N>"
-    else
-        return "\<Tab>"
-    endif
-endfunction
-:inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-
-"
 "" ================ Turn Off Swap Files ==============
 set noswapfile
 set nobackup
@@ -86,9 +76,9 @@ set nowb
 " " Keep undo history across sessions, by storing in file.
 " " Only works all the time.
 if has('persistent_undo')
-    silent !mkdir ~/.vim/backups > /dev/null 2>&1
-    set undodir=~/.vim/backups
-    set undofile
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
 endif
 "
 "
@@ -98,13 +88,7 @@ endif
 "colorscheme blaquemagick
 colorscheme default
 
-hi normal ctermbg=none
-hi NonText ctermbg=none
-hi String ctermbg=none
 hi StatusLine ctermbg=none
-"hi StatusLine ctermfg=White
-""set foldcolumn=3
-hi FoldColumn ctermbg=none
 
 let mapleader = "\<Space>"
 
@@ -113,7 +97,6 @@ map <Leader>r :registers<CR>
 map <Leader>n :bn<CR>
 map <Leader>k :bd<CR>
 map <Leader>= mpggVG=`pzz
-map <Leader>u r<C-k><space><space>
 map <Leader>c :!ctags -R *<CR>
 
 "Buffer mappings
@@ -122,39 +105,12 @@ nnoremap <Leader>l :ls<CR>
 "make . work with visually selected lines
 vnoremap . :norm.<CR>
 
-nnoremap <Leader>e :e **/*
-nnoremap <Leader>b :b */*<C-d>
-
 map <Leader><Leader> <C-^>
 
-" fugitive git bindings
-nnoremap <space>ga :Git add %:p<CR><CR>
-nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gc :Gcommit -v -q<CR>
-nnoremap <space>gt :Gcommit -v -q %:p<CR>
-nnoremap <space>pi iimport code; code.interact(local=dict(globals(), **locals()))<C-c>
-
-iabbrev docu # This is an example method commented the way I like.
-\<CR> It sums the three arguments and returns that value.
-\<CR> 
-\<CR> And do very much more in this description :)
-\<CR> 
-\<CR> * *Overrides* :
-\<CR>   - (+SomeClassConcernOrWhatever+)
-\<CR> 
-\<CR> * *Args*      :
-\<CR>   - *apples* (+integer+) -> the number of apples
-\<CR> 
-\<CR> * *Returns*   :
-\<CR>   - (+integer+) the total number of fruit
-\<CR> 
-\<CR> * *Raises*    :
-\<CR>   - +ArgumentError+ -> if any value is nil or negative
-\<CR> 
+nnoremap <space>ag :Ack 
+cnoreabbrev ag Ack
 
 set fileencodings=utf-8,latin2
-set spelllang=cz
-set wrap
 set nolist
 
 map <C-J> <C-W>j
@@ -168,4 +124,9 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
