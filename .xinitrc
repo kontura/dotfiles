@@ -31,46 +31,21 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
-#exec optirun /usr/bin/steam -bigpicture
 
-PATH=$PATH:/home/alex/bin
-PATH=$PATH:/root/.gem/ruby/2.3.0/bin
+PATH=$PATH:/home/amatej/Usr/bin
 export PATH
 
 #barmk.sh | drawBar.sh &
 #z3braBar.sh | drawTopBar.sh &
 
-setxkbmap -option grp:alt_shift_toggle us,cz
-mpd
+setxkbmap -option grp:rctrl_rshift_toggle us,cz
 
-monitorToggleHDMI1.sh
-monitorToggleHDMI-1.sh
+monitorDuplicate.sh
 
 . ~/.bash_aliases
-#xpad &
 
-synclient TouchpadOff=1
-#compton --config ~/.config/compton/compton.conf -b
-#compton --config ~/.config/compton/compton_shadow.conf -b
-#unclutter &
-#bar.sh &
-#nmcli dev wifi connect <name> password <password>
-
-#hsetroot -tile ~/usr/pictures/wallpapers/repeat/grid_tile.png
-#set_theme brown_space
-xrdb -override ~/usr/dotfiles/colors/cloud.colors
-#~/bin/conky
-
-cat ~/usr/startup_notifications | xargs -L1 popup &
-
-#conky &
-#xsnow -notrees -nosanta -norudolf &
-
-#prevent screen sleep mode
-#xset s off -dpms
-
-redshift &
-~/bin/switchCapsLockWithEsc
+~/Usr/bin/switchCapsLockWithEsc
+feh --bg-center /home/amatej/Pictures/wallhaven-37667.jpg
 
 #wew | xEventReactor.sh &
 sxhkd ~/.config/sxhkd/dwm &
@@ -78,7 +53,7 @@ sxhkd ~/.config/sxhkd/dwm &
 #exec pekwm
 #exec /home/alex/src/aewmpp/aewm++
 exec dwm
-exec st
+#exec st
 
 #sxhkd ~/.config/sxhkd/bspwm &
 #exec bspwm

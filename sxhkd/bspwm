@@ -96,6 +96,9 @@ super + ctrl + shift + space
 #
 # move/resize
 #
+#
+super + {1-9}
+	bspc desktop -f {1-9}
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}

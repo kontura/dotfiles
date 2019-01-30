@@ -11,11 +11,17 @@ HISTSIZE= HISTFILESIZE= #infite history
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=/home/alex/bin:$PATH
+export PATH=/home/amatej/bin:$PATH
+
+export EDITOR=vim
+export NNN_USE_EDITOR=1
 
 . .bash_aliases
 
 
-alias ls='ls --color=auto'
 export NNN_DE_FILE_MANAGER=io.elementary.files
-PS1='[\u@\h \W]\$ '
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "

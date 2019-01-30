@@ -11,13 +11,16 @@ f(){
   find . -name "*$1*"
 }
 
+alias ls='ls --color=auto'
+alias ll='ls -la --color=auto'
+
 alias clock="tty-clock -c -C 7 -B"
 alias date='date +%F--%r'
 alias cpass='pass -c'
 alias sus='systemctl suspend'
 alias suspend='systemctl suspend'
 alias wall='hsetroot -center'
-alias n='/usr/local/bin/nnn -p /home/alex/bin/nlay'
+alias n='/usr/local/bin/nnn'
 
 alias v='vim'
 alias vi='vim'

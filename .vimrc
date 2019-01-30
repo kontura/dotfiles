@@ -94,9 +94,9 @@ endif
 "
 "colorscheme Alduin
 "colorscheme monokain
-colorscheme falcon
+"colorscheme falcon
 "colorscheme blaquemagick
-"colorscheme default
+colorscheme default
 
 hi normal ctermbg=none
 hi NonText ctermbg=none
@@ -132,6 +132,7 @@ nnoremap <space>ga :Git add %:p<CR><CR>
 nnoremap <space>gs :Gstatus<CR>
 nnoremap <space>gc :Gcommit -v -q<CR>
 nnoremap <space>gt :Gcommit -v -q %:p<CR>
+nnoremap <space>pi iimport code; code.interact(local=dict(globals(), **locals()))<C-c>
 
 iabbrev docu # This is an example method commented the way I like.
 \<CR> It sums the three arguments and returns that value.

@@ -46,11 +46,11 @@ super + w
   term
 
 super + ctrl + l
-  lock.sh
+  slock
 
 super + space
-  rofi.sh
-#dmenu_run -nb '#1c1c1c' -sf '#1c1c1c' -sb white 
+  dmenu_run -nb '#1c1c1c' -sf '#1c1c1c' -sb white 
+#rofi.sh
 
 super + w + alt
   ~/bin/rofi-wifi-menu/rofi-wifi-menu.sh
