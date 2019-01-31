@@ -107,7 +107,7 @@ vnoremap . :norm.<CR>
 
 map <Leader><Leader> <C-^>
 
-nnoremap <space>ag :Ack 
+nnoremap <space>/ :Ack 
 cnoreabbrev ag Ack
 
 set fileencodings=utf-8,latin2
