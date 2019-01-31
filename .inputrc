@@ -11,3 +11,6 @@ set skip-completed-text on
 "\e[B": history-search-forward
 "\eOA": history-search-backward
 "\eOB": history-search-forward
+
+"\C-p": history-search-backward
+"\C-n": history-search-forward
