@@ -20,7 +20,6 @@ alias cpass='pass -c'
 alias sus='systemctl suspend'
 alias suspend='systemctl suspend'
 alias wall='hsetroot -center'
-alias n='/usr/local/bin/nnn'
 
 alias v='vim'
 alias vi='vim'

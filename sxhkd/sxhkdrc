@@ -9,7 +9,7 @@ super + c
   clipmenu
 
 super + z
-  popup $(date)
+  info_bar
 
 super + d
   term "vim /home/alex/usr/TODO"
@@ -20,23 +20,6 @@ super + alt + c
 super + w + i
   ( w=$(pfw); ignw -s $w; focus.sh next; chwb -s 0 $w; )
 
-super + alt + p
-  mpc toggle
-
-super + alt + l
-  mpc next
-
-super + alt + h
-  mpc prev
-
-super + alt + space
-  clerk --add track
-
-super + alt + j
-  amixer -D pulse sset Master 5%-
-
-super + alt + k
-  amixer -D pulse sset Master 5%+
 
 super + Return
 	term
@@ -49,7 +32,7 @@ super + ctrl + l
   slock
 
 super + space
-  dmenu_run -nb '#1c1c1c' -sf '#1c1c1c' -sb white 
+  dmenu_run -nb '#011a38' -sf '#011a38' -sb white 
 #rofi.sh
 
 super + w + alt

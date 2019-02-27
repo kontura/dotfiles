@@ -3,9 +3,9 @@
 #
 
 # quit bspwm normally
-super + alt + Escape
-	bspc quit
-
+#super + alt + Escape
+#	bspc quit
+#
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
@@ -17,10 +17,6 @@ super + m
 # if the current node is automatic, send it to the last manual, otherwise pull the last leaf
 super + y
 	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
-
-# swap the current node and the biggest node
-super + g
-	bspc node -s biggest
 
 #
 # state/flags
@@ -52,7 +48,7 @@ super + {p,b,comma,period}
 
 # focus the next/previous node
 alt + {_,shift + }Tab
-	bspc node -f {next,prev}
+	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop
 super + bracket{left,right}
@@ -69,10 +65,10 @@ super + {o,i}
 	bspc wm -h on
 
 
-## focus or send to the given desktop 
-#super + {_,shift + }{1-9,0}
-#	bspc {desktop -f,node -d} '^{1-9,10}'
-#
+# focus or send to the given desktop 
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
 #
 # preselect
 #
@@ -97,40 +93,34 @@ super + ctrl + shift + space
 # move/resize
 #
 #
-super + {1-9}
-	bspc desktop -f {1-9}
 
 # expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+#super + alt + {h,j,k,l}
+#	bspc node -z {left 20 0,top 0 20,top 0 -20,left -20 0} &&  bspc node -z {right 20 0,bottom 0 20,bottom 0 -20,right -20 0}
+super + alt + h
+	bspc node -z left -20 0; \
+	bspc node -z right -20 0
+super + alt + l
+	bspc node -z left 20 0; \
+	bspc node -z right 20 0
+super + alt + j
+	bspc node -z top 0 20; \
+	bspc node -z bottom 0 20
+super + alt + k
+	bspc node -z top 0 -20; \
+	bspc node -z bottom 0 -20
 
 # contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+#super + alt + shift + {h,j,k,l}
+#bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-super + shift + {1-9}
+super + shift + g + {1-9}
   groups.sh -s $(pfw) {1-9}
 
-super + {1-9}
+super + g + {1-9}
 	groups.sh -t {1-9}
-
-
-super + s
-  center.sh $(pfw)
-
-super + {l, h}
-	wmv {+80,-80} 0 $(pfw) 
-
-super + {j, k}
-	wmv 0 {+80,-80} $(pfw)
-
-super + shift + {l,h}
-	wrs {+80,-80} 0 $(pfw)
-
-super + shift + {k,j}
-	wrs 0 {-80,+80} $(pfw)
 

@@ -99,6 +99,8 @@ map <Leader>k :bd<CR>
 map <Leader>= mpggVG=`pzz
 map <Leader>c :!ctags -R *<CR>
 
+map <Leader>m :!cd build && make<CR>
+
 "Buffer mappings
 nnoremap <Leader>l :ls<CR>
 
@@ -130,3 +132,12 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+"clean up dividing line
+set fillchars=vert:\ 
+hi VertSplit ctermbg=black guibg=black
+
+"Highlight trailign whitespaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+

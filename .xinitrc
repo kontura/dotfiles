@@ -45,15 +45,17 @@ monitorDuplicate.sh
 . ~/.bash_aliases
 
 ~/Usr/bin/switchCapsLockWithEsc
-feh --bg-center /home/amatej/Pictures/wallhaven-37667.jpg
+#feh --bg-center /home/amatej/Pictures/wallhaven-37667.jpg
 
-#wew | xEventReactor.sh &
-sxhkd ~/.config/sxhkd/dwm &
+DESKTOP_SESSION=wmutils
+. ~/.bash_profile
+#sxhkd ~/.config/sxhkd/dwm &
+#sxhkd ~/.config/sxhkd/dwm &
 #exec openbox-session
 #exec pekwm
 #exec /home/alex/src/aewmpp/aewm++
-exec dwm
-#exec st
+#exec dwm
+exec st
 
 #sxhkd ~/.config/sxhkd/bspwm &
 #exec bspwm

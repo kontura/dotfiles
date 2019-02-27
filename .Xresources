@@ -21,10 +21,10 @@ URxvt.keysym.M-C-2: command:\033]50;xft:Gohu GohuFont:pixelsize=14\007
 
 !special
 
-*.foreground:   #000000
+*.foreground:   #ffffff
 
 !cursosr color
-*.background:   #e9e9e9
+*.background:   #001021
 
 !background
 *.cursorColor:  #000000 
