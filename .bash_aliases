@@ -36,3 +36,4 @@ alias rnm='systemctl restart NetworkManager'
 
 alias audio='pulsemixer'
 alias gif='gifview -a'
+alias vim='gvim -v'

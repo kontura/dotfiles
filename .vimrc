@@ -99,6 +99,8 @@ map <Leader>k :bd<CR>
 map <Leader>= mpggVG=`pzz
 map <Leader>c :!ctags -R *<CR>
 
+map <Leader>d :Linediff<CR>
+
 map <Leader>m :!cd build && make<CR>
 
 "Buffer mappings
@@ -133,11 +135,11 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+"Global clipboard-
+set clipboard+=unnamedplus
+
 "clean up dividing line
 set fillchars=vert:\ 
-hi VertSplit ctermbg=black guibg=black
-
-"Highlight trailign whitespaces
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-
+highlight VertSplit    cterm=none ctermfg=white ctermbg=none guibg=red
+highlight StatusLine   cterm=none ctermfg=red   ctermbg=none guibg=red
+highlight StatusLineNC cterm=none ctermfg=white ctermbg=none guibg=green
