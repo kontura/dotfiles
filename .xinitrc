@@ -32,7 +32,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-PATH=$PATH:/home/amatej/Usr/bin
+PATH=$PATH:/home/alex/bin
 export PATH
 
 DESKTOP_SESSION=wmutils
@@ -40,6 +40,8 @@ setxkbmap -option grp:rctrl_rshift_toggle us,cz
 
 
 monitorDuplicate.sh
+monitorToggleHDMI1.sh
+monitorToggleHDMI-1.sh
 
 . ~/.bash_aliases
 
@@ -68,12 +70,7 @@ fi
 
 unclutter &
 hexchat &
-#sxhkd ~/.config/sxhkd/dwm &
-#sxhkd ~/.config/sxhkd/dwm &
-#exec openbox-session
-#exec pekwm
-#exec /home/alex/src/aewmpp/aewm++
-#exec dwm
+exec st
 
 #sxhkd ~/.config/sxhkd/bspwm &
 #exec bspwm

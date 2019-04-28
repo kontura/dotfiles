@@ -23,9 +23,11 @@ super + alt + c
 super + w + i
   ( w=$(pfw); ignw -s $w; focus.sh next; chwb -s 0 $w; )
 
+super + alt + j
+  /home/alex/bin/background_randomizer.sh
 
 super + Return
-	term
+  term
  # st
 
 super + w

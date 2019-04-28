@@ -12,7 +12,7 @@ static const char col_gray2[]       = "#444444";
 static const unsigned int gappx     = 14;        /* gap pixel between windows */
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#82284c";
+static const char col_cyan[]        = "#ae552b";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },

@@ -11,7 +11,7 @@ HISTSIZE= HISTFILESIZE= #infite history
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=/home/amatej/bin:$PATH
+export PATH=/home/alex/bin:$PATH
 
 export EDITOR=vim
 export NNN_USE_EDITOR=1
