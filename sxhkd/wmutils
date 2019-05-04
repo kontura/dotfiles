@@ -16,9 +16,6 @@ super + @button3
 alt {_,shift +}Tab
   focus.sh {next, prev}
 
-alt + {h, j, k, l}
-  closest.sh {h, j, k, l}
-
 super + f
   fullscreen.sh $(pfw)
 
