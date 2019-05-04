@@ -128,6 +128,14 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+hi diffadd ctermfg=green
+hi diffdelete ctermfg=red
+hi difftext cterm=bold,italic ctermfg=red
+
+hi diffadd ctermbg=none
+hi diffdelete ctermbg=none
+hi diffchange ctermbg=none
+hi difftext ctermbg=none
 
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
