@@ -13,6 +13,7 @@ ln -sfv "$DOTFILES_DIR/sxhkd" ~/.config/sxhkd
 ln -sfv "$DOTFILES_DIR/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/.bash_aliases" ~
 ln -sfv "$DOTFILES_DIR/.bashrc" ~
+ln -sfv "$DOTFILES_DIR/.gitconfig" ~
 
 mkdir -p ~/src
 cd ~/src && git clone https://git.suckless.org/dwm
