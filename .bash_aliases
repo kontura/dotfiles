@@ -7,6 +7,17 @@ g(){
   grep -R $1 * --exclude=$2
 }
 
+b(){
+  rm -rf build
+  mkdir build
+  cd build
+  cmake ..
+  make -j5
+  make -j5 tests
+  make -j5 test
+  cd ..
+}
+
 f(){
   find . -name "*$1*"
 }
