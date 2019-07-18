@@ -101,7 +101,13 @@ map <Leader>c :!ctags -R *<CR>
 
 map <Leader>d :Linediff<CR>
 
-map <Leader>m :!cd build && make<CR>
+function TestCmake()
+    :make -C build
+    :make -C build test
+endfunction
+
+map <Leader>m :make -C build<CR>
+map <Leader>t :call TestCmake()<CR>
 
 "Buffer mappings
 nnoremap <Leader>l :ls<CR>
@@ -117,10 +123,8 @@ cnoreabbrev ag Ack
 set fileencodings=utf-8,latin2
 set nolist
 
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
+map <C-J> 10j
+map <C-K> 10k
 set wmh=0
 
 let g:ctrlp_cache_dir = '~/.cache/ctrlp'

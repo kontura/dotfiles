@@ -7,17 +7,6 @@ g(){
   grep -R $1 * --exclude=$2
 }
 
-b(){
-  rm -rf build
-  mkdir build
-  cd build
-  cmake ..
-  make -j5
-  make -j5 tests
-  make -j5 test
-  cd ..
-}
-
 f(){
   find . -name "*$1*"
 }
@@ -35,6 +24,9 @@ alias wall='hsetroot -center'
 alias v='vim'
 alias vi='vim'
 alias pa='sudo pacman'
+
+alias gits='git status'
+alias s='git status'
 
 alias dockerstopall='docker stop $(docker ps -aq)'
 alias dockerrmall='docker rm $(docker ps -aq)'

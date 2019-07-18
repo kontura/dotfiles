@@ -54,11 +54,16 @@ if [ "$DESKTOP_SESSION" == "wmutils" ]; then
   feh --bg-center /home/amatej/Pictures/fedora.jpg
   sxhkd ~/.config/sxhkd/wmutils &
   wew | xEventReactor.sh &
+  exec st
 fi
 if [ "$DESKTOP_SESSION" == "bspwm" ]; then
   export XDG_CONFIG_HOME="/home/amatej/.config"
   feh --bg-center /home/amatej/Pictures/wallhaven-171381.jpg
   sxhkd ~/.config/sxhkd/bspwm &
+fi
+if [ "$DESKTOP_SESSION" == "sway" ]; then
+  feh --bg-center /home/amatej/Pictures/wallhaven-171381.jpg
+  exec sway
 fi
 
 unclutter &
@@ -69,7 +74,6 @@ hexchat &
 #exec pekwm
 #exec /home/alex/src/aewmpp/aewm++
 #exec dwm
-exec st
 
 #sxhkd ~/.config/sxhkd/bspwm &
 #exec bspwm
