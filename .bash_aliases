@@ -35,6 +35,7 @@ extract () {
 
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
+alias ccat='highlight --out-format=ansi'
 
 alias clock="tty-clock -c -C 7 -B"
 alias date='date +%F--%r'
