@@ -123,8 +123,13 @@ cnoreabbrev ag Ack
 set fileencodings=utf-8,latin2
 set nolist
 
-map <C-J> 10j
-map <C-K> 10k
+autocmd BufNewFile,BufRead *.frag set syntax=c
+autocmd BufNewFile,BufRead *.geom set syntax=c
+
+map <C-j> 10j
+map <C-k> 10k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
 set wmh=0
 
 let g:ctrlp_cache_dir = '~/.cache/ctrlp'

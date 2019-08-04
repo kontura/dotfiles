@@ -53,7 +53,6 @@ if [ "$DESKTOP_SESSION" == "dwm" ]; then
   sxhkd ~/.config/sxhkd/dwm &
 fi
 if [ "$DESKTOP_SESSION" == "wmutils" ]; then
-  feh --bg-center /home/amatej/Pictures/fedora.jpg
   sxhkd ~/.config/sxhkd/wmutils &
   wew | xEventReactor.sh &
   exec st

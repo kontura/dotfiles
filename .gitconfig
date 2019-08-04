@@ -6,5 +6,5 @@
 [difftool]
 	prompt = false
 [alias]
-	d = difftool
+	d = difftool --staged
 	s = status

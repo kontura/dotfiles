@@ -5,7 +5,7 @@ super + Escape
 # wm independent hotkeys
 #
 #
-super + Tab
+super + m
   monocle
 
 super + c
