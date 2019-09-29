@@ -15,6 +15,9 @@ ln -sfv "$DOTFILES_DIR/.bash_aliases" ~
 ln -sfv "$DOTFILES_DIR/.bashrc" ~
 ln -sfv "$DOTFILES_DIR/.gitconfig" ~
 
+ln -sfv "$DOTFILES_DIR/wayfire.ini" ~/.config/wayfire.ini
+ln -sfv "$DOTFILES_DIR/wf-shell.ini" ~/.config/wf-shell.ini
+
 mkdir -p ~/src
 cd ~/src && git clone https://git.suckless.org/dwm
 cd ~/src && git clone https://aur.archlinux.org/st-scrollback-git.git
