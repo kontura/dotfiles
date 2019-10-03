@@ -160,3 +160,10 @@ set fillchars=vert:\
 highlight VertSplit    cterm=none ctermfg=white ctermbg=none guibg=red
 highlight StatusLine   cterm=none ctermfg=red   ctermbg=none guibg=red
 highlight StatusLineNC cterm=none ctermfg=white ctermbg=none guibg=green
+
+set tags=~/mytags
+
+
+
+:ab pdb import pdb; pdb.set_trace()
+:ab gdb import pdb; pdb.set_trace()
