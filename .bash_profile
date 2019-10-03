@@ -5,3 +5,5 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
+# User specific environment and startup programs
+PATH=$PATH:~/bin
