@@ -8,3 +8,4 @@
 [alias]
 	d = difftool --staged
 	s = status
+    pr = "!f() { git fetch origin \"pull/$1/head:pr-$1\"; }; f"
