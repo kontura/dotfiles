@@ -12,6 +12,7 @@ ln -sfv "$DOTFILES_DIR/.bash_profile" ~
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/sxhkd" ~/.config/sxhkd
 ln -sfv "$DOTFILES_DIR/tig" ~/.config/tig
+ln -sfv "$DOTFILES_DIR/waybar" ~/.config/waybar
 ln -sfv "$DOTFILES_DIR/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/.bash_aliases" ~
 ln -sfv "$DOTFILES_DIR/.bashrc" ~
