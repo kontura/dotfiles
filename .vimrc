@@ -163,6 +163,7 @@ highlight StatusLineNC cterm=none ctermfg=white ctermbg=none guibg=green
 
 set tags=~/mytags
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 
 :ab pdb import pdb; pdb.set_trace()
