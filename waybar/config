@@ -10,7 +10,7 @@
     "custom/TODO": {
         "format": "{}",
         "return-type": "json",
-        "interval": 1,
+        "interval": 120,
         "escape": true,
         "exec": "~/bin/print_todo",
         "max-length": 10
