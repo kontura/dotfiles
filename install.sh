@@ -7,7 +7,6 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 mkdir -p ~/.config 
 
 ln -sfv "$DOTFILES_DIR/.xinitrc" ~
-ln -sfv "$DOTFILES_DIR/.Xresources" ~
 ln -sfv "$DOTFILES_DIR/.bash_profile" ~
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/sxhkd" ~/.config/

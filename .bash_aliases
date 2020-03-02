@@ -37,12 +37,9 @@ alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias ccat='highlight --out-format=ansi'
 
-alias clock="tty-clock -c -C 7 -B"
 alias date='date +%F--%r'
-alias cpass='pass -c'
 alias sus='systemctl suspend'
 alias suspend='systemctl suspend'
-alias wall='hsetroot -center'
 
 alias v='vim'
 alias vi='vim'
@@ -53,6 +50,8 @@ alias s='git status'
 
 alias dockerstopall='docker stop $(docker ps -aq)'
 alias dockerrmall='docker rm $(docker ps -aq)'
+alias podmanstopall='podman stop $(podman ps -aq)'
+alias podmanrmall='podman rm $(podman ps -aq)'
 alias redmine='rvm use 1.9.3; cd /usr/share/webapps/redmine; ruby bin/rails s -b 0.0.0.0 webrick -e production -p 3001'
 alias redmine_3.1.4='rvm use 1.9.3; cd ~/Downloads/redmine-3.1.4; ruby bin/rails s -b 0.0.0.0 webrick -e production -p 3001'
 

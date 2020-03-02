@@ -65,7 +65,7 @@ set nofoldenable "dont fold by default
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 "" ================ Turn Off Swap Files ==============
@@ -76,9 +76,9 @@ set nowb
 " " Keep undo history across sessions, by storing in file.
 " " Only works all the time.
 if has('persistent_undo')
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
-  set undodir=~/.vim/backups
-  set undofile
+    silent !mkdir ~/.vim/backups > /dev/null 2>&1
+    set undodir=~/.vim/backups
+    set undofile
 endif
 "
 "
@@ -97,16 +97,17 @@ map <Leader>r :registers<CR>
 map <Leader>n :bn<CR>
 map <Leader>k :bd<CR>
 map <Leader>= mpggVG=`pzz
-map <Leader>c :!ctags -R *<CR>
+map <Leader>c :!ctags --exclude=fedora --exclude=rhel -R -o ~/mytags ~/src<CR>
 
 map <Leader>d :Linediff<CR>
 
 function TestCmake()
-    :make -C build
-    :make -C build test
+    :make -C build -j5
+    :make -C build tests -j5
+    :make -C build test -j5
 endfunction
 
-map <Leader>m :make -C build<CR>
+map <Leader>m :make -C build -j5<CR>
 map <Leader>t :call TestCmake()<CR>
 
 "Buffer mappings
@@ -134,7 +135,7 @@ set wmh=0
 
 let g:ctrlp_cache_dir = '~/.cache/ctrlp'
 if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
 hi diffadd ctermfg=green
@@ -149,7 +150,7 @@ hi difftext ctermbg=none
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+    let g:ackprg = 'ag --vimgrep'
 endif
 
 "Global clipboard-
@@ -168,3 +169,32 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 :ab pdb import pdb; pdb.set_trace()
 :ab gdb import pdb; pdb.set_trace()
+
+let g:toggleHighlightWhitespace = 1    
+function! ToggleHighlightWhitespace()    
+    let g:toggleHighlightWhitespace = 1 - g:toggleHighlightWhitespace     
+    call RefreshHighlightWhitespace()    
+endfunction    
+
+function! RefreshHighlightWhitespace()    
+    if g:toggleHighlightWhitespace == 1 " normal action, do the hi    
+        highlight ExtraWhitespace ctermbg=red guibg=red    
+        match ExtraWhitespace /\s\+$/    
+        augroup HighLightWhitespace    
+            autocmd BufWinEnter * match ExtraWhitespace /\s\+$/    
+            autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/    
+            autocmd InsertLeave * match ExtraWhitespace /\s\+$/    
+            autocmd BufWinLeave * call clearmatches()    
+        augroup END    
+    else " clear whitespace highlighting    
+        call clearmatches()    
+        autocmd! HighLightWhitespace BufWinEnter    
+        autocmd! HighLightWhitespace InsertEnter    
+        autocmd! HighLightWhitespace InsertLeave    
+        autocmd! HighLightWhitespace BufWinLeave    
+    endif    
+endfunction    
+
+autocmd BufWinEnter * call RefreshHighlightWhitespace()    
+autocmd BufWinLeave * call RefreshHighlightWhitespace()    
+nnoremap <leader>s :call ToggleHighlightWhitespace()<cr>

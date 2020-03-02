@@ -1,7 +1,9 @@
 bind generic + !git commit --amend
 bind stage 1 stage-update-line
 bind main B !git rebase -i %(commit)
-bind main ! !git revert %(commit)
+bind main C !git checkout %(commit)
+bind main c !git cherry-pick %(commit)
+bind main ! !git reset --hard %(commit)
 bind generic <C-f> scroll-page-down
 bind generic <C-b> scroll-page-up
 bind generic B @sh -c "xdg-open 'https://'$(git remote -v | grep -Eo 'github.com[:/][^.]+' | head -1 | tr : /)'/commit/%(commit)'"
