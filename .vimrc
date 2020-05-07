@@ -100,6 +100,7 @@ map <Leader>= mpggVG=`pzz
 map <Leader>c :!ctags --exclude=fedora --exclude=rhel -R -o ~/mytags ~/src<CR>
 
 map <Leader>d :Linediff<CR>
+map <Leader>b :!tig blame %<CR>
 
 function TestCmake()
     :make -C build -j5
@@ -170,31 +171,31 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 :ab pdb import pdb; pdb.set_trace()
 :ab gdb import pdb; pdb.set_trace()
 
-let g:toggleHighlightWhitespace = 1    
-function! ToggleHighlightWhitespace()    
-    let g:toggleHighlightWhitespace = 1 - g:toggleHighlightWhitespace     
-    call RefreshHighlightWhitespace()    
-endfunction    
+let g:toggleHighlightWhitespace = 1
+function! ToggleHighlightWhitespace()
+    let g:toggleHighlightWhitespace = 1 - g:toggleHighlightWhitespace
+    call RefreshHighlightWhitespace()
+endfunction
 
-function! RefreshHighlightWhitespace()    
-    if g:toggleHighlightWhitespace == 1 " normal action, do the hi    
-        highlight ExtraWhitespace ctermbg=red guibg=red    
-        match ExtraWhitespace /\s\+$/    
-        augroup HighLightWhitespace    
-            autocmd BufWinEnter * match ExtraWhitespace /\s\+$/    
-            autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/    
-            autocmd InsertLeave * match ExtraWhitespace /\s\+$/    
-            autocmd BufWinLeave * call clearmatches()    
-        augroup END    
-    else " clear whitespace highlighting    
-        call clearmatches()    
-        autocmd! HighLightWhitespace BufWinEnter    
-        autocmd! HighLightWhitespace InsertEnter    
-        autocmd! HighLightWhitespace InsertLeave    
-        autocmd! HighLightWhitespace BufWinLeave    
-    endif    
-endfunction    
+function! RefreshHighlightWhitespace()
+    if g:toggleHighlightWhitespace == 1 " normal action, do the hi
+        highlight ExtraWhitespace ctermbg=red guibg=red
+        match ExtraWhitespace /\s\+$/
+        augroup HighLightWhitespace
+            autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+            autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+            autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+            autocmd BufWinLeave * call clearmatches()
+        augroup END
+    else " clear whitespace highlighting
+        call clearmatches()
+        autocmd! HighLightWhitespace BufWinEnter
+        autocmd! HighLightWhitespace InsertEnter
+        autocmd! HighLightWhitespace InsertLeave
+        autocmd! HighLightWhitespace BufWinLeave
+    endif
+endfunction
 
-autocmd BufWinEnter * call RefreshHighlightWhitespace()    
-autocmd BufWinLeave * call RefreshHighlightWhitespace()    
+autocmd BufWinEnter * call RefreshHighlightWhitespace()
+autocmd BufWinLeave * call RefreshHighlightWhitespace()
 nnoremap <leader>s :call ToggleHighlightWhitespace()<cr>

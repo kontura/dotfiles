@@ -4,11 +4,11 @@ youtubeToMp3(){
 }
 
 g(){
-    grep -R $1 * --exclude=$2
+    ag --nobreak --noheading . | fzf
 }
 
 f(){
-    find . -name "*$1*"
+    fzf
 }
 
 # Easy way to extract archives
@@ -51,11 +51,13 @@ alias s='git status'
 alias dockerstopall='docker stop $(docker ps -aq)'
 alias dockerrmall='docker rm $(docker ps -aq)'
 alias podmanstopall='podman stop $(podman ps -aq)'
+alias sudopodmanstopall='sudo podman stop $(sudo podman ps -aq)'
 alias podmanrmall='podman rm $(podman ps -aq)'
+alias sudopodmanrmall='sudo podman rm $(sudo podman ps -aq)'
 alias redmine='rvm use 1.9.3; cd /usr/share/webapps/redmine; ruby bin/rails s -b 0.0.0.0 webrick -e production -p 3001'
 alias redmine_3.1.4='rvm use 1.9.3; cd ~/Downloads/redmine-3.1.4; ruby bin/rails s -b 0.0.0.0 webrick -e production -p 3001'
 
-alias p='ping google.com'
+alias p='ping 8.8.8.8'
 alias disk_usage='ncdu'
 alias rnm='systemctl restart NetworkManager'
 

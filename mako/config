@@ -12,10 +12,3 @@ default-timeout=2000
 width=800
 height=500
 padding=400
-
-[app-name="Spotify"]
-margin=200
-# this is to effectively hide it
-padding=2999
-background-color=#ffffff00
-default-timeout=3

@@ -67,7 +67,7 @@ fi
 
 unclutter &
 hexchat &
-exec st
+exec dwm
 
 #sxhkd ~/.config/sxhkd/bspwm &
 #exec bspwm
