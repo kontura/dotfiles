@@ -10,3 +10,10 @@
 	s = status
     pr = "!f() { git fetch origin \"pull/$1/head:pr-$1\"; git checkout \"pr-$1\"; }; f"
     PR = "!f() { git fetch origin \"pull/$1/head:pr-$1\"; git checkout \"pr-$1\"; }; f"
+[pull]
+	ff = only
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

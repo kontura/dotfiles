@@ -13,7 +13,7 @@ HISTSIZE= HISTFILESIZE= #infite history
 
 export PATH=/home/alex/bin:$PATH
 
-export EDITOR=vim
+export EDITOR=nvim
 export NNN_USE_EDITOR=1
 
 . .bash_aliases

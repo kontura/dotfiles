@@ -1,5 +1,5 @@
-
-execute pathogen#infect()
+set nocp
+call pathogen#infect()
 syntax enable
 filetype plugin indent on
 " ================general config ====================
@@ -28,6 +28,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 set path+=**
 set wildmenu
 let g:netrw_banner=0
+
 
 :command W w
 :command WQ wq
@@ -100,15 +101,15 @@ map <Leader>= mpggVG=`pzz
 map <Leader>c :!ctags --exclude=fedora --exclude=rhel -R -o ~/mytags ~/src<CR>
 
 map <Leader>d :Linediff<CR>
-map <Leader>b :!tig blame %<CR>
+map <Leader>b :let @b=line('.')<CR>:term tig blame % +<C-R>b<CR>
 
 function TestCmake()
-    :make -C build -j5
-    :make -C build tests -j5
-    :make -C build test -j5
+    :make -C build -j10
+    :make -C build tests -j10
+    :make -C build test -j10
 endfunction
 
-map <Leader>m :make -C build -j5<CR>
+map <Leader>m :make -C build -j10<CR>
 map <Leader>t :call TestCmake()<CR>
 
 "Buffer mappings
@@ -119,7 +120,7 @@ vnoremap . :norm.<CR>
 
 map <Leader><Leader> <C-^>
 
-nnoremap <space>/ :Ack 
+nnoremap <space>/ :Ack
 cnoreabbrev ag Ack
 
 set fileencodings=utf-8,latin2
@@ -170,6 +171,8 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 :ab pdb import pdb; pdb.set_trace()
 :ab gdb import pdb; pdb.set_trace()
+:ab todo TODO(amatej):
+:ab TODO TODO(amatej):
 
 let g:toggleHighlightWhitespace = 1
 function! ToggleHighlightWhitespace()

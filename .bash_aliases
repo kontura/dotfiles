@@ -37,7 +37,6 @@ alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias ccat='highlight --out-format=ansi'
 
-alias date='date +%F--%r'
 alias sus='systemctl suspend'
 alias suspend='systemctl suspend'
 
@@ -63,4 +62,6 @@ alias rnm='systemctl restart NetworkManager'
 
 alias audio='pulsemixer'
 alias gif='gifview -a'
-alias vim='gvim -v'
+alias vim='nvim'
+
+alias untar='tar -xvf'
