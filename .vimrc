@@ -33,6 +33,8 @@ let g:netrw_banner=0
 :command W w
 :command WQ wq
 :command Wq wq
+:command Qa qa
+:command QA qa
 
 :set hlsearch
 " Press F4 to toggle highlighting on/off, and show current value.
@@ -49,9 +51,9 @@ set autoindent
 set smartindent
 set smarttab
 set shiftwidth=4
-set softtabstop=4
+"set softtabstop=4
 set cindent
-set tabstop=4
+"set tabstop=4
 set expandtab
 filetype plugin on
 filetype indent on
