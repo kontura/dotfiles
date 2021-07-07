@@ -11,3 +11,6 @@ bind generic <C-j> move-half-page-down
 bind generic <C-k> move-half-page-up
 bind generic g move-first-line
 bind generic G move-last-line
+
+bind diff       D       >git difftool --tool=vimdiff --trust-exit-code --no-prompt %(commit)^! -- %(file)
+bind stage      D       >sh -c "git difftool --tool=vimdiff --trust-exit-code --no-prompt `expr '%(status)' : 'Staged changes' >/dev/null && echo --cached` -- '%(file)'"
