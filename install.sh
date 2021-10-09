@@ -26,3 +26,5 @@ ln -sfv "$DOTFILES_DIR/.gitconfig" ~
 
 ln -sfv "$DOTFILES_DIR/wayfire.ini" ~/.config/
 ln -sfv "$DOTFILES_DIR/wf-shell.ini" ~/.config/
+
+ln -sfv "$DOTFILES_DIR/alacritty" ~/.config/
