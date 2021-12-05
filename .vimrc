@@ -1,5 +1,5 @@
 set nocp
-call pathogen#infect()
+"call pathogen#infect()
 syntax enable
 filetype plugin indent on
 " ================general config ====================
