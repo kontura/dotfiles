@@ -328,7 +328,7 @@ bell:
   duration: 200
 
 # Background opacity
-background_opacity: .98
+window.opacity: .98
 
 # Key bindings
 #
