@@ -19,3 +19,5 @@
 	process = git-lfs filter-process
 [push]
 	default = current
+[merge]
+	conflictstyle = diff3
