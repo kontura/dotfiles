@@ -1,5 +1,4 @@
 set nocp
-"call pathogen#infect()
 syntax enable
 filetype plugin indent on
 " ================general config ====================
@@ -204,3 +203,16 @@ endfunction
 autocmd BufWinEnter * call RefreshHighlightWhitespace()
 autocmd BufWinLeave * call RefreshHighlightWhitespace()
 nnoremap <leader>s :call ToggleHighlightWhitespace()<cr>
+
+call plug#begin()
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+call plug#end()
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+

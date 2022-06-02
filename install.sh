@@ -4,18 +4,15 @@
 export DOTFILES_DIR EXTRA_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-mkdir -p ~/.config 
-mkdir -p ~/.config/nvim
+mkdir -p ~/.config
 
 ln -sfv "$DOTFILES_DIR/.xinitrc" ~
 ln -sfv "$DOTFILES_DIR/.bash_profile" ~
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 
-ln -sfv "$DOTFILES_DIR/.vimrc" ~/.config/nvim/init.vim
-ln -sfv "$DOTFILES_DIR/.vim/bundle" ~/.config/nvim/bundle
-ln -sfv "$DOTFILES_DIR/.vim/autoload" ~/.config/nvim/autoload
+ln -sfv "$DOTFILES_DIR/nvim" ~/.config/
+curl -fLo "${DOTFILES_DIR}/nvim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-ln -sfv "$DOTFILES_DIR/sxhkd" ~/.config/
 ln -sfv "$DOTFILES_DIR/tig" ~/.config/
 ln -sfv "$DOTFILES_DIR/waybar" ~/.config/
 ln -sfv "$DOTFILES_DIR/mako" ~/.config/
