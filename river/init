@@ -165,3 +165,5 @@ riverctl rule-add csd -app-id ".*"
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
+
+riverctl keyboard‐layout -options "grp:alt_shift_toggle,compose:ralt, caps:swapescape" us,cz
