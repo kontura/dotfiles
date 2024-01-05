@@ -166,4 +166,5 @@ riverctl rule-add csd -app-id ".*"
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
 
-riverctl keyboard‐layout -options "grp:alt_shift_toggle,compose:ralt, caps:swapescape" us,cz
+riverctl keyboard-layout -options "grp:alt_shift_toggle,compose:ralt, caps:swapescape" us,cz
+riverctl input "pointer-1267-128-Elan_Touchpad" tap enabled
