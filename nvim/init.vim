@@ -99,7 +99,6 @@ map <Leader>r :registers<CR>
 map <Leader>n :bn<CR>
 map <Leader>k :bd<CR>
 map <Leader>= mpggVG=`pzz
-map <Leader>c :!ctags --exclude=fedora --exclude=rhel -R -o ~/mytags ~/src<CR>
 
 map <Leader>d :Linediff<CR>
 map <Leader>b :let @b=line('.')<CR>:term tig blame % +<C-R>b<CR>
