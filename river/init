@@ -141,9 +141,9 @@ do
     riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
     riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
 
-    # Control screen backlight brightness with light (https://github.com/haikarainen/light)
-    riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
-    riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
+    # Control screen backlight brightness with brightnessctl
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl -s 10%+'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctt -s 10%-'
 done
 
 # Set background and border color
@@ -168,3 +168,4 @@ rivertile -view-padding 6 -outer-padding 6 &
 
 riverctl keyboard-layout -options "grp:alt_shift_toggle,compose:ralt, caps:swapescape" us,cz
 riverctl input "pointer-1267-128-Elan_Touchpad" tap enabled
+riverctl input "pointer-1267-32-Elan_Touchpad" tap enabled
