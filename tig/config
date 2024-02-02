@@ -7,8 +7,6 @@ bind main ! !git reset --hard %(commit)
 bind generic <C-f> scroll-page-down
 bind generic <C-b> scroll-page-up
 bind generic B @sh -c "xdg-open 'https://'$(git remote -v | grep -Eo 'github.com[:/][^.]+' | head -1 | tr : /)'/commit/%(commit)'"
-bind generic <C-j> move-half-page-down
-bind generic <C-k> move-half-page-up
 bind generic g move-first-line
 bind generic G move-last-line
 
