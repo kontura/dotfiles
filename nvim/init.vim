@@ -198,6 +198,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'tikhomirov/vim-glsl'
+Plug 'ldelossa/litee.nvim'
+Plug 'ldelossa/litee-calltree.nvim'
 call plug#end()
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -266,5 +268,16 @@ require('lspconfig')['rust_analyzer'].setup{
       ["rust-analyzer"] = {}
     }
 }
+
+-- configure the litee.nvim library 
+require('litee.lib').setup({
+panel = {
+    orientation = "bottom",
+    panel_size  = 20
+}
+})
+-- configure litee-calltree.nvim
+require('litee.calltree').setup({})
+
 
 EOF
