@@ -203,3 +203,9 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+lua << EOF
+--TELESPOCE
+require('telescope').setup{ defaults = { file_ignore_patterns = {"container_build", "build"} } }
+
+
+EOF
