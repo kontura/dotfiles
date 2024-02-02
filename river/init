@@ -12,8 +12,8 @@
 
 # Exec on startup
 background_randomizer.sh
-wl-paste --watch cliphist store
-riverctl map normal Control B spawn "cliphist list | dmenu -l 20 | cliphist decode | wl-copy"
+wl-paste --watch cliphist store &
+riverctl map normal Super B spawn "cliphist list | dmenu -l 20 | cliphist decode | wl-copy"
 
 riverctl map normal Super+Shift Return spawn alacritty
 riverctl map normal Super Space spawn wldash
