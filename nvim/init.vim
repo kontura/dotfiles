@@ -28,6 +28,8 @@ set path+=**
 set wildmenu
 let g:netrw_banner=0
 
+map <C-d> <C-d>zz
+map <C-u> <C-u>zz
 
 :command W w
 :command WQ wq
