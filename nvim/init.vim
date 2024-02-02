@@ -34,6 +34,8 @@ let g:netrw_banner=0
 :command Wq wq
 :command Qa qa
 :command QA qa
+:command Vs vs
+:command VS vs
 
 :set hlsearch
 " Press F4 to toggle highlighting on/off, and show current value.
