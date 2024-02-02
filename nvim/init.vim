@@ -164,8 +164,6 @@ highlight VertSplit    cterm=none ctermfg=white ctermbg=none guibg=red
 highlight StatusLine   cterm=none ctermfg=red   ctermbg=none guibg=red
 highlight StatusLineNC cterm=none ctermfg=white ctermbg=none guibg=green
 
-set tags=~/mytags
-
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 
