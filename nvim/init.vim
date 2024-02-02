@@ -135,11 +135,6 @@ map <C-H> <C-W>h
 map <C-L> <C-W>l
 set wmh=0
 
-let g:ctrlp_cache_dir = '~/.cache/ctrlp'
-if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
 hi diffadd ctermfg=green
 hi diffdelete ctermfg=red
 hi difftext cterm=bold,italic ctermfg=red
@@ -151,10 +146,6 @@ hi difftext ctermbg=none
 
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-endif
-
 "Global clipboard-
 set clipboard+=unnamedplus
 
@@ -163,9 +154,6 @@ set fillchars=vert:\
 highlight VertSplit    cterm=none ctermfg=white ctermbg=none guibg=red
 highlight StatusLine   cterm=none ctermfg=red   ctermbg=none guibg=red
 highlight StatusLineNC cterm=none ctermfg=white ctermbg=none guibg=green
-
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
 
 :ab pdb import pdb; pdb.set_trace()
 :ab gdb import pdb; pdb.set_trace()
