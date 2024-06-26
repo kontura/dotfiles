@@ -7,7 +7,7 @@
 [mergetool]
   prompt = true
 [mergetool "vimdiff"]
-  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+  cmd = nvim -d $LOCAL $REMOTE -c '$wincmd w'
 [difftool]
   prompt = false
 [diff]
@@ -26,5 +26,3 @@
 	process = git-lfs filter-process
 [push]
 	default = current
-[merge]
-	conflictstyle = diff3
