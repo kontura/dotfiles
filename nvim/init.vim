@@ -89,15 +89,6 @@ if has('persistent_undo')
     set undodir=~/.vim/backups
     set undofile
 endif
-"
-"
-"colorscheme Alduin
-"colorscheme monokain
-"colorscheme falcon
-"colorscheme blaquemagick
-colorscheme default
-
-hi StatusLine ctermbg=none
 
 let mapleader = "\<Space>"
 
@@ -156,9 +147,9 @@ set clipboard+=unnamedplus
 
 "clean up dividing line
 set fillchars=vert:\ 
-highlight VertSplit    cterm=none ctermfg=white ctermbg=none guibg=red
-highlight StatusLine   cterm=none ctermfg=red   ctermbg=none guibg=red
-highlight StatusLineNC cterm=none ctermfg=white ctermbg=none guibg=green
+"highlight VertSplit    cterm=none ctermfg=white ctermbg=none guibg=red
+highlight StatusLine   cterm=none ctermfg=red ctermbg=none guifg=salmon guibg=None
+highlight StatusLineNC cterm=none ctermfg=white ctermbg=none guifg=black guibg=None
 
 :ab pdb import pdb; pdb.set_trace()
 :ab gdb import pdb; pdb.set_trace()
