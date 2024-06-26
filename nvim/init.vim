@@ -198,8 +198,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'tikhomirov/vim-glsl'
-Plug 'ldelossa/litee.nvim'
-Plug 'ldelossa/litee-calltree.nvim'
+Plug 'kontura/trails.nvim'
 call plug#end()
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -269,15 +268,17 @@ require('lspconfig')['rust_analyzer'].setup{
     }
 }
 
--- configure the litee.nvim library 
-require('litee.lib').setup({
-panel = {
-    orientation = "bottom",
-    panel_size  = 20
-}
-})
--- configure litee-calltree.nvim
-require('litee.calltree').setup({})
+require('trails').setup({})
 
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
 
 EOF
