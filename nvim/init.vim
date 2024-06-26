@@ -31,6 +31,9 @@ let g:netrw_banner=0
 map <C-d> <C-d>zz
 map <C-u> <C-u>zz
 
+map <C-j> :cnext<CR>
+map <C-k> :cprev<CR>
+
 :command W w
 :command WQ wq
 :command Wq wq
