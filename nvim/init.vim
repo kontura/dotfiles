@@ -204,6 +204,8 @@ lua << EOF
 --TELESPOCE
 require('telescope').setup{ defaults = { file_ignore_patterns = {"container_build", "build"} } }
 
+vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+
 -- LSP
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
