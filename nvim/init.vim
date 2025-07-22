@@ -127,6 +127,8 @@ set nolist
 autocmd BufNewFile,BufRead *.frag set syntax=c
 autocmd BufNewFile,BufRead *.geom set syntax=c
 
+autocmd VimResized * wincmd =
+
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 set wmh=0
