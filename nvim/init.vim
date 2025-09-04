@@ -195,6 +195,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'tikhomirov/vim-glsl'
 Plug 'kontura/trails.nvim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'igorlfs/nvim-dap-view'
 call plug#end()
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -278,5 +281,97 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+local dap = require("dap")
+dap.adapters.gdb = {
+  type = "executable",
+  command = "gdb",
+  args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
+}
+
+local dap = require("dap")
+dap.configurations.cpp = {
+  {
+    name = 'Attach to gdbserver :1234',
+    type = 'gdb',
+    request = 'attach',
+    target = 'localhost:1234',
+    cwd = '${workspaceFolder}',
+    setupCommands = {
+        {
+           text = '-enable-pretty-printing',
+           description =  'enable pretty printing',
+           ignoreFailures = false
+        },
+    },
+  },
+  {
+    name = "Launch",
+    type = "gdb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = "${workspaceFolder}",
+    stopAtBeginningOfMainSubprogram = false,
+    setupCommands = {
+        {
+           text = '-enable-pretty-printing',
+           description =  'enable pretty printing',
+           ignoreFailures = false
+        },
+    },
+  },
+  {
+    name = "Select and attach to process",
+    type = "gdb",
+    request = "attach",
+    program = function()
+       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    pid = function()
+       local name = vim.fn.input('Executable name (filter): ')
+       return require("dap.utils").pick_process({ filter = name })
+    end,
+    cwd = '${workspaceFolder}'
+  },
+}
+dap.configurations.c = dap.configurations.cpp
+vim.fn.sign_define('DapBreakpoint', { text='●', texthl='DapBreakpoint', linehl='', numhl='' })
+vim.fn.sign_define('DapStopped', { text='=>', texthl='DapStopped', linehl='DapStoppedLine', numhl='DapStopped' })
+vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#ff0000' })
+vim.api.nvim_set_hl(0, 'DapStoppedLine', { bg = '#2d2d2d' })  -- dark background for current line
+vim.api.nvim_set_hl(0, 'DapStopped', { fg = '#00ff00', bg = '#2d2d2d' })
+
+require("nvim-dap-virtual-text").setup()
+local widgets = require('dap.ui.widgets')
+
+vim.keymap.set('n', '<space>gb', dap.toggle_breakpoint)
+vim.keymap.set('n', '<space>gC', dap.run_to_cursor)
+vim.keymap.set('n', '<F1>', dap.continue)
+vim.keymap.set('n', '<F2>', dap.step_into)
+vim.keymap.set('n', '<F3>', dap.step_over)
+vim.keymap.set('n', '<space>?', widgets.hover)
+
+local bt = function()
+  local widgets = require('dap.ui.widgets')
+  widgets.centered_float(widgets.frames)
+end
+
+vim.keymap.set('n', '<space>gt', bt)
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gitcommit",
+  callback = function()
+    vim.opt_local.colorcolumn = "72"
+
+    -- Create a namespace for local highlight
+    local ns_id = vim.api.nvim_create_namespace("gitcommit_colorcolumn")
+    vim.api.nvim_buf_set_extmark(0, ns_id, 0, 0, {})  -- anchor namespace
+
+    -- Set highlight in this namespace
+    vim.api.nvim_set_hl(ns_id, "ColorColumn", { bg = "#333333" })
+  end,
+})
 
 EOF
