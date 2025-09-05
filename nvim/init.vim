@@ -269,6 +269,10 @@ require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
+require('lspconfig')['ols'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
@@ -346,6 +350,7 @@ dap.configurations.cpp = {
   },
 }
 dap.configurations.c = dap.configurations.cpp
+dap.configurations.odin = dap.configurations.cpp
 vim.fn.sign_define('DapBreakpoint', { text='●', texthl='DapBreakpoint', linehl='', numhl='' })
 vim.fn.sign_define('DapStopped', { text='=>', texthl='DapStopped', linehl='DapStoppedLine', numhl='DapStopped' })
 vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#ff0000' })
