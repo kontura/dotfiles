@@ -207,7 +207,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 lua << EOF
 --TELESPOCE
-require('telescope').setup{ defaults = { file_ignore_patterns = {"container_build", "build"} } }
+require('telescope').setup{
+    defaults = {
+        file_ignore_patterns = {"container_build", "build"},
+    }
+}
 
 vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 
