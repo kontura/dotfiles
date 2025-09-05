@@ -199,11 +199,6 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'igorlfs/nvim-dap-view'
 call plug#end()
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 lua << EOF
 --TELESPOCE
@@ -212,6 +207,12 @@ require('telescope').setup{
         file_ignore_patterns = {"container_build", "build"},
     }
 }
+-- Find files using Telescope command-line sugar.
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files)
+-- has the <leader>fg keybinding
+require "config.telescope.multigrep".setup()
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers)
+vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags)
 
 vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 
