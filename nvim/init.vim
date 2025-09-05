@@ -151,7 +151,7 @@ set clipboard+=unnamedplus
 set fillchars=vert:\ 
 "highlight VertSplit    cterm=none ctermfg=white ctermbg=none guibg=red
 highlight StatusLine   cterm=none ctermfg=red ctermbg=none guifg=salmon guibg=None
-highlight StatusLineNC cterm=none ctermfg=white ctermbg=none guifg=black guibg=None
+highlight StatusLineNC cterm=none ctermfg=white ctermbg=none guifg=white guibg=None
 
 :ab pdb import pdb; pdb.set_trace()
 :ab gdb import pdb; pdb.set_trace()
