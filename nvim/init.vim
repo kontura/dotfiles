@@ -214,6 +214,10 @@ vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 -- LSP
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+vim.diagnostic.config({
+  virtual_text = true,
+  severity_sort = true,
+})
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
