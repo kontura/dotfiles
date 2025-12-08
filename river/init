@@ -145,7 +145,7 @@ do
 
     # Control screen backlight brightness with brightnessctl
     riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl -s 10%+'
-    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctt -s 10%-'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl -s 10%-'
 done
 
 # Set background and border color
