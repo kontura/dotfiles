@@ -107,6 +107,8 @@ function TestCmake()
     :make -C build test -j10
 endfunction
 
+set notermguicolors
+
 map <Leader>m :make -C build -j10<CR>
 map <Leader>t :call TestCmake()<CR>
 
