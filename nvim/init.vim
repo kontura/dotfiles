@@ -68,8 +68,8 @@ set nowrap
 set textwidth=0 wrapmargin=0
 " ================ Folds ============================
 set foldmethod=indent "fold based on indent
-set foldnestmax=3 "deepest fold is 3 levels
 set nofoldenable "dont fold by default
+set foldlevel=99 "dont start with everything folded
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
