@@ -200,6 +200,7 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'igorlfs/nvim-dap-view'
 Plug 'sphamba/smear-cursor.nvim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 lua << EOF
