@@ -199,9 +199,12 @@ Plug 'kontura/trails.nvim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'igorlfs/nvim-dap-view'
+Plug 'sphamba/smear-cursor.nvim'
 call plug#end()
 
 lua << EOF
+require('smear_cursor').enabled = true
+
 --TELESPOCE
 require('telescope').setup{
     defaults = {
