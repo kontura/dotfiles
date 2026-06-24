@@ -156,7 +156,7 @@ highlight StatusLine   cterm=none ctermfg=red ctermbg=none guifg=salmon guibg=No
 highlight StatusLineNC cterm=none ctermfg=white ctermbg=none guifg=white guibg=None
 
 :ab pdb import pdb; pdb.set_trace()
-:ab gdb import pdb; pdb.set_trace()
+:ab gdb __asm__ volatile ("int3");
 :ab todo TODO(amatej):
 :ab TODO TODO(amatej):
 
