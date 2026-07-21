@@ -28,3 +28,4 @@ ln -sfv "$DOTFILES_DIR/alacritty" ~/.config/
 ln -sfv "$DOTFILES_DIR/hypr" ~/.config/
 ln -sfv "$DOTFILES_DIR/river" ~/.config/
 ln -sfv "$DOTFILES_DIR/gdb" ~/.config/
+ln -sfv "$DOTFILES_DIR/walker" ~/.config/
