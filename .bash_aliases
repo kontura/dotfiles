@@ -65,3 +65,5 @@ alias gif='gifview -a'
 alias vim='nvim'
 
 alias untar='tar -xvf'
+
+alias d5='cd /home/amatej/tmp/src/dnf5'
