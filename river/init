@@ -153,5 +153,7 @@ riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
 
 riverctl keyboard-layout -options "grp:alt_shift_toggle,compose:ralt, caps:swapescape" us,cz
+# To list devices run: riverctl list-devices
 riverctl input "pointer-1267-128-Elan_Touchpad" tap enabled
 riverctl input "pointer-1267-32-Elan_Touchpad" tap enabled
+riverctl input "pointer-1739-52934-SYNA801A:00_06CB:CEC6_Touchpad" tap enabled
