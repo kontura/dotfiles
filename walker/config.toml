@@ -32,7 +32,7 @@ anchor_right = true
 "symbols" = 3
 
 [placeholders]
-"default" = { input = "cmd: echo \"‎ \t\t\t\t\t$(date +\"%H:%M | %d/%m/%Y\") |  $(cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || cat /sys/class/power_supply/BAT1/capacity 2>/dev/null || echo '?')%\"", list = "No Results" }
+"default" = { input = "Search", list = "No Results" } # placeholders for input and empty list, key is the providers name, so f.e. "desktopapplications" or "menus:other"
 
 [keybinds]
 close = ["Escape"]
@@ -57,8 +57,10 @@ default = [
   "websearch",
   "wireplumber",
   "bluetooth",
+  "bookmarks",
+  "menus",
 ] # providers to be queried by default
-empty = ["wireplumber"] # providers to be queried when query is empty
+empty = ["menus"] # providers to be queried when query is empty
 ignore_preview = [] # providers that should not show previews
 max_results = 50 # global max results
 
@@ -297,4 +299,17 @@ aptpackages = [
   { action = "show_installed", label = "Show Installed", bind = "ctrl i", after = "AsyncClearReload" },
   { action = "refresh", label = "Refresh", bind = "ctrl r", after = "AsyncClearReload" },
   { action = "visit_url", label = "Open URL", bind = "ctrl o" },
+]
+
+"menus:system-info" = [
+    { action = "menus:open", label = "Open submenu" },
+
+    { action = "select", label = "Select", default = true, bind = "Return", after = "Close" },
+
+    { action = "brightness_up", label = "Brightness +", bind = "ctrl Up", after = "Nothing" },
+    { action = "brightness_down", label = "Brightness -", bind = "ctrl Down", after = "Nothing" },
+
+    { action = "volume_up", label = "Volume +", bind = "ctrl Up", after = "Nothing" },
+    { action = "volume_down", label = "Volume -", bind = "ctrl Down", after = "Nothing" },
+    { action = "volume_mute", label = "Toggle mute", bind = "ctrl m", after = "Nothing" },
 ]
