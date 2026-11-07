@@ -199,9 +199,18 @@ function GetEntries()
             brightness_up = "brightnessctl set 5%+",
             brightness_down = "brightnessctl set 5%-",
         },
+
+    -- 3. suspend
+    table.insert(entries, {
+        Text = "Suspend the machine",
+        Icon = "weather-clear-night-symbolic",
+        Actions = {
+            sus = "systemctl suspend",
+        },
+        Preview = get_preview(),
+        PreviewType = "pango",
     })
 
 
     return entries
 end
-
