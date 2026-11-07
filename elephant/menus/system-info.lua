@@ -27,13 +27,6 @@ local function get_brightness()
     return percentage and percentage .. "%" or "Unknown"
 end
 
-local function get_battery()
-    local value = command(
-        "cat /sys/class/power_supply/BAT*/capacity"
-    )
-    return value ~= "" and value .. "%" or "Unavailable"
-end
-
 -- Calendar generation
 local function calendar_preview()
     local now = os.date("*t")
@@ -42,7 +35,7 @@ local function calendar_preview()
 
     local months = {}
 
-    for offset = -1, 1 do
+    for offset = 0, 0 do
         local month = now.month + offset
         local year = now.year
 
@@ -166,6 +159,56 @@ local function calendar_preview()
     return table.concat(output, "\n")
 end
 
+
+local function get_battery_perc()
+    local value = command(
+        "cat /sys/class/power_supply/BAT*/capacity 2>/dev/null | head -n1"
+    )
+
+    local percent = tonumber(value)
+    if not percent then
+        return nil
+    end
+
+    return math.max(0, math.min(100, percent))
+end
+
+local function battery_preview()
+    local percent = get_battery_perc()
+    if not percent then
+        return "<span foreground='#888888'>󰂑 Battery unavailable</span>"
+    end
+
+    local filled = math.floor(percent / 10 + 0.5)
+    local empty = 10 - filled
+
+    local color = "#a6e3a1"
+    if percent <= 20 then
+        color = "#f38ba8"
+    elseif percent <= 50 then
+        color = "#f9e2af"
+    end
+
+    local bar =
+        "<span foreground='" .. color .. "'>" ..
+        string.rep("█", filled) ..
+        "</span>" ..
+        "<span foreground='#585b70'>" ..
+        string.rep("░", empty) ..
+        "</span>"
+
+    return string.format(
+        "<span font_family='monospace' size='large'>%s  <b>%d%%</b></span>",
+        bar,
+        percent
+    )
+end
+
+local function get_preview()
+        return calendar_preview() .. "\n" .. battery_preview()
+end
+
+
 function GetEntries()
     local entries = {}
 
@@ -179,18 +222,11 @@ function GetEntries()
             volume_down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
             volume_mute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         },
-        Preview = calendar_preview(),
+        Preview = get_preview(),
         PreviewType = "pango",
     })
 
-    -- 2. Battery
-    table.insert(entries, {
-        Text = "Battery",
-        Subtext = get_battery(),
-        Icon = "battery-full",
-    })
-
-    -- 3. Brightness
+    -- 2. Brightness
     table.insert(entries, {
         Text = "Screen Brightness",
         Subtext = get_brightness(),
@@ -199,6 +235,9 @@ function GetEntries()
             brightness_up = "brightnessctl set 5%+",
             brightness_down = "brightnessctl set 5%-",
         },
+        Preview = get_preview(),
+        PreviewType = "pango",
+    })
 
     -- 3. suspend
     table.insert(entries, {
