@@ -306,10 +306,10 @@ aptpackages = [
 
     { action = "select", label = "Select", default = true, bind = "Return", after = "Close" },
 
-    { action = "brightness_up", label = "Brightness +", bind = "ctrl Up", after = "Nothing" },
-    { action = "brightness_down", label = "Brightness -", bind = "ctrl Down", after = "Nothing" },
+    { action = "brightness_up", label = "Brightness +", bind = "ctrl Up", after = "AsyncReload" },
+    { action = "brightness_down", label = "Brightness -", bind = "ctrl Down", after = "AsyncReload" },
 
-    { action = "volume_up", label = "Volume +", bind = "ctrl Up", after = "Nothing" },
-    { action = "volume_down", label = "Volume -", bind = "ctrl Down", after = "Nothing" },
-    { action = "volume_mute", label = "Toggle mute", bind = "ctrl m", after = "Nothing" },
+    { action = "volume_up", label = "Volume +", bind = "ctrl Up", after = "AsyncReload" },
+    { action = "volume_down", label = "Volume -", bind = "ctrl Down", after = "AsyncReload" },
+    { action = "volume_mute", label = "Toggle mute", bind = "ctrl m", after = "AsyncReload" },
 ]
