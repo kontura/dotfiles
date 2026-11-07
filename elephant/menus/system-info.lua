@@ -212,7 +212,7 @@ end
 function GetEntries()
     local entries = {}
 
-    -- 1. Volume
+    -- Volume
     table.insert(entries, {
         Text = "Main Volume",
         Subtext = get_volume(),
@@ -226,7 +226,7 @@ function GetEntries()
         PreviewType = "pango",
     })
 
-    -- 2. Brightness
+    -- Brightness
     table.insert(entries, {
         Text = "Screen Brightness",
         Subtext = get_brightness(),
@@ -239,7 +239,30 @@ function GetEntries()
         PreviewType = "pango",
     })
 
-    -- 3. suspend
+    -- Brightness max
+    table.insert(entries, {
+        Text = "Screen Brightness Max",
+        Icon = "daytime-sunrise-symbolic",
+        Actions = {
+            brightness_max = "brightnessctl set 100%",
+        },
+        Preview = get_preview(),
+        PreviewType = "pango",
+    })
+
+    -- Brightness min
+    table.insert(entries, {
+        Text = "Screen Brightness Min",
+        Icon = "daytime-sunset-symbolic",
+        Actions = {
+            brightness_max = "brightnessctl set 3%",
+        },
+        Preview = get_preview(),
+        PreviewType = "pango",
+    })
+
+
+    -- suspend
     table.insert(entries, {
         Text = "Suspend the machine",
         Icon = "weather-clear-night-symbolic",
