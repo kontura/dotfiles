@@ -16,7 +16,10 @@ wl-paste --watch cliphist store &
 riverctl map normal Super B spawn "cliphist list | dmenu -l 20 | cliphist decode | wl-copy"
 
 riverctl map normal Super+Shift Return spawn alacritty
-riverctl map normal Super Space spawn wldash
+
+elephant & disown
+walker --gapplication-service & disown
+riverctl map normal Super Space spawn walker
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
