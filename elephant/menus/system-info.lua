@@ -138,10 +138,9 @@ local function calendar_preview()
     -- Stack months vertically.
     local output = {
         string.format(
-            '<span font_family="monospace" weight="bold" size="32pt">%s</span>',
+            '\n\n  <span font_family="monospace" weight="bold" size="100pt">%s</span><span font_family="monospace">',
             os.date("%H:%M")
         ),
-        '<span font_family="monospace">'
     }
 
     for index, block in ipairs(blocks) do
@@ -150,7 +149,7 @@ local function calendar_preview()
         end
 
         for _, line in ipairs(block) do
-            output[#output + 1] = line
+            output[#output + 1] = "  " .. line
         end
     end
 
@@ -198,7 +197,7 @@ local function battery_preview()
         "</span>"
 
     return string.format(
-        "<span font_family='monospace' size='large'>%s  <b>%d%%</b></span>",
+        "    <span font_family='monospace' size='large'>%s  <b>%d%%</b></span>",
         bar,
         percent
     )
