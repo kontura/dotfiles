@@ -9,6 +9,7 @@ bind generic <C-b> scroll-page-up
 bind generic B @sh -c "xdg-open 'https://'$(git remote -v | grep -Eo 'github.com[:/][^.]+' | head -1 | tr : /)'/commit/%(commit)'"
 bind generic g move-first-line
 bind generic G move-last-line
+bind refs D !git branch -D %(branch)
 
 bind diff       D       >git difftool --tool=vimdiff --trust-exit-code --no-prompt %(commit)^! -- %(file)
 bind stage      D       >sh -c "git difftool --tool=vimdiff --trust-exit-code --no-prompt `expr '%(status)' : 'Staged changes' >/dev/null && echo --cached` -- '%(file)'"
