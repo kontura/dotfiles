@@ -231,8 +231,8 @@ function GetEntries()
         Subtext = get_brightness(),
         Icon = "display-brightness",
         Actions = {
-            brightness_up = "brightnessctl set 5%+",
-            brightness_down = "brightnessctl set 5%-",
+            brightness_up = "brightnessctl set 5%+; ddcutil setvcp 10 + 5",
+            brightness_down = "brightnessctl set 5%-; ddcutil setvcp 10 - 5",
         },
         Preview = get_preview(),
         PreviewType = "pango",
@@ -243,7 +243,7 @@ function GetEntries()
         Text = "Screen Brightness Max",
         Icon = "daytime-sunrise-symbolic",
         Actions = {
-            brightness_max = "brightnessctl set 100%",
+            brightness_max = "brightnessctl set 100%; ddcutil setvcp 10 100",
         },
         Preview = get_preview(),
         PreviewType = "pango",
@@ -254,7 +254,7 @@ function GetEntries()
         Text = "Screen Brightness Min",
         Icon = "daytime-sunset-symbolic",
         Actions = {
-            brightness_max = "brightnessctl set 3%",
+            brightness_max = "brightnessctl set 3%; ddcutil setvcp 10 3",
         },
         Preview = get_preview(),
         PreviewType = "pango",
