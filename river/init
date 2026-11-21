@@ -160,3 +160,13 @@ riverctl keyboard-layout -options "grp:alt_shift_toggle,compose:ralt, caps:swape
 riverctl input "pointer-1267-128-Elan_Touchpad" tap enabled
 riverctl input "pointer-1267-32-Elan_Touchpad" tap enabled
 riverctl input "pointer-1739-52934-SYNA801A:00_06CB:CEC6_Touchpad" tap enabled
+
+MONITOR_DESC="Dell Inc. DELL U2725QE"
+wlr-randr | while IFS= read -r line; do
+    case "$line" in
+        *"$MONITOR_DESC"*)
+            output=$(printf '%s\n' "$line" | cut -d '"' -f 1 | xargs)
+            wlr-randr --output "$output" --scale 1.5
+            ;;
+    esac
+done
