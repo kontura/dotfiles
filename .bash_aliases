@@ -3,12 +3,8 @@ youtubeToMp3(){
     yt-dlp --extract-audio --audio-format mp3 $1
 }
 
-g(){
-    ag --nobreak --noheading . | fzf
-}
-
-f(){
-    fzf
+b(){
+    rm -rf container_build/ && mkdir container_build && cd container_build && cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/usr -GNinja -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. -DWITH_MAN=0 -DWITH_HTML=0 -DWITH_MODULEMD=1 && ninja
 }
 
 # Easy way to extract archives
