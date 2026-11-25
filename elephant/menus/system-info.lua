@@ -231,8 +231,8 @@ function GetEntries()
         Subtext = get_brightness(),
         Icon = "display-brightness",
         Actions = {
-            brightness_up = "brightnessctl set 5%+; ddcutil setvcp 10 + 5",
-            brightness_down = "brightnessctl set 5%-; ddcutil setvcp 10 - 5",
+            brightness_up = "brightnessctl set 5%+; ddcutil setvcp 66 1; ddcutil setvcp 10 + 5",
+            brightness_down = "brightnessctl set 5%-; ddcutil setvcp 66 1; ddcutil setvcp 10 - 5",
         },
         Preview = get_preview(),
         PreviewType = "pango",
@@ -243,7 +243,7 @@ function GetEntries()
         Text = "Screen Brightness Max",
         Icon = "daytime-sunrise-symbolic",
         Actions = {
-            brightness_max = "brightnessctl set 100%; ddcutil setvcp 10 100",
+            brightness_max = "brightnessctl set 100%; ddcutil setvcp 66 1; ddcutil setvcp 10 100",
         },
         Preview = get_preview(),
         PreviewType = "pango",
@@ -254,12 +254,33 @@ function GetEntries()
         Text = "Screen Brightness Min",
         Icon = "daytime-sunset-symbolic",
         Actions = {
-            brightness_max = "brightnessctl set 3%; ddcutil setvcp 10 3",
+            brightness_max = "brightnessctl set 3%; ddcutil setvcp 66 1; ddcutil setvcp 10 3",
         },
         Preview = get_preview(),
         PreviewType = "pango",
     })
 
+    -- Enable external auto brightness
+    table.insert(entries, {
+        Text = "Enable external screen auto brightness",
+        Icon = "display-brightness",
+        Actions = {
+            brightness_toggle = "ddcutil setvcp 66 2",
+        },
+        Preview = get_preview(),
+        PreviewType = "pango",
+    })
+
+    -- Toggle external output
+    table.insert(entries, {
+        Text = "Toggle external screen output",
+        Icon = "view-fullscreen",
+        Actions = {
+            brightness_toggle = "[[ $(ddcutil getvcp 60 --terse | awk '{print $4}') == \"x19\" ]] && ddcutil setvcp 60 0x0F || ddcutil setvcp 60 0x19",
+        },
+        Preview = get_preview(),
+        PreviewType = "pango",
+    })
 
     -- suspend
     table.insert(entries, {
